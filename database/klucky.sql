@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2018 at 10:57 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.0.29
+-- Generation Time: Oct 29, 2018 at 11:42 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -191,24 +191,24 @@ CREATE TABLE `gift` (
 --
 
 INSERT INTO `gift` (`id`, `name`, `slug`, `amount`, `image_url`, `status`, `display_order`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, '1 CGV Cinema ticket 3D', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:27', '2018-10-29 13:48:27'),
-(2, '2 CGV Cinema ticket 2D', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:33', '2018-10-29 13:48:33'),
-(3, '1 IMAX CGV Cinema ticket 2D/3D', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:40', '2018-10-29 13:48:40'),
-(4, '2 IMAX CGV Cinema ticket 2D/3D', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:44', '2018-10-29 13:48:44'),
-(5, '1 Return ticket to KL, Malaysia (3D2N)', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:49', '2018-10-29 13:48:49'),
-(6, '2 Return ticket to KL, Malaysia (3D2N)', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:53', '2018-10-29 13:48:53'),
-(7, '1 Return ticket to Bangkok, Thailand (3D2N)', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:48:58', '2018-10-29 13:48:58'),
-(8, '2 Return ticket to Bangkok, Thailand (3D2N)', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:02', '2018-10-29 13:49:02'),
-(9, '1 Return ticket to Singapore', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:07', '2018-10-29 13:49:07'),
-(10, '2 Return ticket to Singapore', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:13', '2018-10-29 13:49:13'),
-(11, 'Voucher shopping at FPT Shop', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:18', '2018-10-29 13:49:18'),
-(12, 'Mobile top-up Card 50k', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:22', '2018-10-29 13:49:22'),
-(13, 'Mobile top-up Card 100k', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:27', '2018-10-29 13:49:27'),
-(14, 'Mobile top-up Card 20k', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:31', '2018-10-29 13:49:31'),
-(15, 'Samsung J6', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:36', '2018-10-29 13:49:36'),
-(16, 'Samsung J8', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:41', '2018-10-29 13:49:41'),
-(17, 'Kcard 200k', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:45', '2018-10-29 13:49:45'),
-(18, 'Free lucky number', '', 0, '', 1, 0, NULL, NULL, '2018-10-29 13:49:50', '2018-10-29 13:49:50');
+(1, '1 CGV Cinema ticket 3D', '', 0, '/uploads/images/gift/ve-chau-au.png', 1, 0, NULL, NULL, '2018-10-29 13:48:27', '2018-10-30 05:20:58'),
+(2, '2 CGV Cinema ticket 2D', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:48:33', '2018-10-30 05:21:03'),
+(3, '1 IMAX CGV Cinema ticket 2D/3D', '', 0, '/uploads/images/gift/iphoneX.png', 1, 0, NULL, NULL, '2018-10-29 13:48:40', '2018-10-30 05:21:10'),
+(4, '2 IMAX CGV Cinema ticket 2D/3D', '', 0, '/uploads/images/gift/Free-lucky-number.png', 1, 0, NULL, NULL, '2018-10-29 13:48:44', '2018-10-30 05:21:17'),
+(5, '1 Return ticket to KL, Malaysia (3D2N)', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:48:49', '2018-10-30 05:18:36'),
+(6, '2 Return ticket to KL, Malaysia (3D2N)', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:48:53', '2018-10-30 05:18:43'),
+(7, '1 Return ticket to Bangkok, Thailand (3D2N)', '', 0, '/uploads/images/gift/ve-chau-au.png', 1, 0, NULL, NULL, '2018-10-29 13:48:58', '2018-10-30 05:21:30'),
+(8, '2 Return ticket to Bangkok, Thailand (3D2N)', '', 0, '/uploads/images/gift/iphoneX.png', 1, 0, NULL, NULL, '2018-10-29 13:49:02', '2018-10-30 05:21:37'),
+(9, '1 Return ticket to Singapore', '', 0, '/uploads/images/gift/ve-chau-au.png', 1, 0, NULL, NULL, '2018-10-29 13:49:07', '2018-10-30 05:21:42'),
+(10, '2 Return ticket to Singapore', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:49:13', '2018-10-30 05:21:50'),
+(11, 'Voucher shopping at FPT Shop', '', 0, '/uploads/images/gift/Free-lucky-number.png', 1, 0, NULL, NULL, '2018-10-29 13:49:18', '2018-10-30 05:21:59'),
+(12, 'Mobile top-up Card 50k', '', 0, '/uploads/images/gift/ve-chau-au.png', 1, 0, NULL, NULL, '2018-10-29 13:49:22', '2018-10-30 05:22:06'),
+(13, 'Mobile top-up Card 100k', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:49:27', '2018-10-30 05:22:27'),
+(14, 'Mobile top-up Card 20k', '', 0, '/uploads/images/gift/ve-Malaysia.png', 1, 0, NULL, NULL, '2018-10-29 13:49:31', '2018-10-30 05:22:13'),
+(15, 'Samsung J6', '', 0, '/uploads/images/gift/iphoneX.png', 1, 0, NULL, NULL, '2018-10-29 13:49:36', '2018-10-30 05:18:57'),
+(16, 'Samsung J8', '', 0, '/uploads/images/gift/iphoneX.png', 1, 0, NULL, NULL, '2018-10-29 13:49:41', '2018-10-30 05:19:05'),
+(17, 'Kcard 200k', '', 0, '/uploads/images/gift/Free-lucky-number.png', 1, 0, NULL, NULL, '2018-10-29 13:49:45', '2018-10-30 05:20:50'),
+(18, 'Free lucky number', '', 0, '/uploads/images/gift/Free-lucky-number.png', 1, 0, NULL, NULL, '2018-10-29 13:49:50', '2018-10-30 05:18:23');
 
 -- --------------------------------------------------------
 
@@ -2083,7 +2083,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `gift`
 --
 ALTER TABLE `gift`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `gift_code`
