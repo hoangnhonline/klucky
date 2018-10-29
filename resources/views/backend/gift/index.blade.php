@@ -56,7 +56,7 @@
                 <td style="white-space:nowrap">                  
                   <a href="{{ route( 'gift.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning  btn-sm">Chỉnh sửa</a>                 
                   
-                  <a onclick="return callDelete('{{ $item->title }}','{{ route( 'gift.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>                
+                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'gift.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>                
                   
                 </td>
               </tr> 

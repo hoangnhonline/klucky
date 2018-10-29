@@ -49,12 +49,9 @@
                   <label>Tên quà<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ $detail->name }}">
                 </div>
-                <div class="form-group" >                  
-                  <label>Giá<span class="red-star">*</span></label>
-                  <input type="text" class="form-control" readonly="readonly" name="price" id="price" value="{{ $totalPrice }}">
-                </div>  
+                
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                  <label class="col-md-3 row">Thumbnail ( 624x468 px)</label>    
+                  <label class="col-md-3 row">Hình ảnh ( 624x468 px)</label>    
                   <div class="col-md-9">
                     <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
                  

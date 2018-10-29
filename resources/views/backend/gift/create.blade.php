@@ -44,10 +44,6 @@
                   <label>Tên quà<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
-                <div class="form-group" >                  
-                  <label>Giá<span class="red-star">*</span></label>
-                  <input type="text" class="form-control number" readonly="readonly" name="price" id="price" value="0">
-                </div>
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
                   <label class="col-md-3 row">Image </label>    
                   <div class="col-md-9">
