@@ -760,12 +760,12 @@ h1, h2, h3, h4, h5, h6, p {
     background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(255,243,152) 0%, rgb(184,0,0) 0%, rgb(134,0,0) 52%, rgb(84,0,0) 100%);
     box-shadow: 0px 2px 53.2px 41.8px rgba(15, 15, 15, 0.43);
 }
-.kl_main_contact:after {
-    content: url(../images/lily.png);
+.kl_girl {
     position: absolute;
     right: -50px;
-    bottom: -270px;
+    bottom: -270px; 
 }
+
 .Layer_1376 {
   background-image: url("Layer 1376.png");
   position: absolute;
@@ -994,15 +994,19 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .lucky-wrap .randomizer-wrap .random-input input::-webkit-input-placeholder {
   color: #e8c57e;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input::-moz-placeholder {
   color: #e8c57e;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input:-ms-input-placeholder {
   color: #e8c57e;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input:-moz-placeholder {
   color: #e8c57e;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .number-run-wrap {
     background: url(../images/bg-number.png) no-repeat center;
@@ -1348,7 +1352,7 @@ h1, h2, h3, h4, h5, h6, p {
         display: none;
     }
     /* Contact */
-    .kl_main_contact:after {
+    .kl_girl {
         display: none;
     }
     .kl_main2_contact {
