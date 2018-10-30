@@ -95,6 +95,31 @@
         var myQuaySo = setInterval(quayso, 30);   
         setTimeout(function(){
             clearInterval(myQuaySo);
-        }, 3000);
+        }, 4000);
+        setTimeout(function(){
+            checkNo();
+        }, 3000);       
      });
+     function checkNo(){
+        var code = $('#code').val();
+         $.ajax({
+              url: $('#route_check_no').val(),
+              type: "GET",
+              async: false,
+              data: {          
+                  code : code
+              },
+              dataType :'json',
+              success: function(data){
+                if(data.success == 0){
+                    $('#wrongModal').modal('show');
+                }else if(data.success == 1){                    
+                    $('#success_image').attr('src', data.image_url);
+                    $('#success_image').attr('alt', data.name);
+                    $('#success_code').html(data.code);
+                    $('#successModal').modal('show');
+                }          
+              }
+        });
+     }
 })(jQuery); // End of use strict
