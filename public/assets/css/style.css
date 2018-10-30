@@ -992,6 +992,18 @@ h1, h2, h3, h4, h5, h6, p {
     outline-color: transparent;
     padding: 0;
 }
+.lucky-wrap .randomizer-wrap .random-input input::-webkit-input-placeholder {
+  color: #e8c57e;
+}
+.lucky-wrap .randomizer-wrap .random-input input::-moz-placeholder {
+  color: #e8c57e;
+}
+.lucky-wrap .randomizer-wrap .random-input input:-ms-input-placeholder {
+  color: #e8c57e;
+}
+.lucky-wrap .randomizer-wrap .random-input input:-moz-placeholder {
+  color: #e8c57e;
+}
 .lucky-wrap .randomizer-wrap .number-run-wrap {
     background: url(../images/bg-number.png) no-repeat center;
     height: 376px;
