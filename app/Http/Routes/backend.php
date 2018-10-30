@@ -34,6 +34,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/update', ['as' => 'gift.update', 'uses' => 'GiftController@update']);
         Route::get('{id}/destroy', ['as' => 'gift.destroy', 'uses' => 'GiftController@destroy']);
     });
+    Route::group(['prefix' => 'gift-code'], function () {
+        Route::get('/', ['as' => 'gift-code.index', 'uses' => 'GiftCodeController@index']);
+        Route::get('/create', ['as' => 'gift-code.create', 'uses' => 'GiftCodeController@create']);
+        Route::post('/store', ['as' => 'gift-code.store', 'uses' => 'GiftCodeController@store']);
+        Route::get('{id}/edit',   ['as' => 'gift-code.edit', 'uses' => 'GiftCodeController@edit']);
+        Route::post('/update', ['as' => 'gift-code.update', 'uses' => 'GiftCodeController@update']);
+        Route::get('{id}/destroy', ['as' => 'gift-code.destroy', 'uses' => 'GiftCodeController@destroy']);
+    });
     Route::group(['prefix' => 'newsletter'], function () {
         Route::get('/', ['as' => 'newsletter.index', 'uses' => 'NewsletterController@index']);
         Route::post('/store', ['as' => 'newsletter.store', 'uses' => 'NewsletterController@store']);

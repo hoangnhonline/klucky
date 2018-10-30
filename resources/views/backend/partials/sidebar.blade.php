@@ -14,7 +14,21 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">MAIN NAVIGATION</li>      
+      <li class="header">MAIN NAVIGATION</li>   
+      <li class="treeview {{ in_array(\Request::route()->getName(), ['gift-code.index', 'gift-code.create', 'gift-code.edit']) ? 'active' : '' }}">
+        <a href="#">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Số may mắn</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li {{ in_array(\Request::route()->getName(), ['gift-code.edit', 'gift-code.index']) ? "class=active" : "" }}><a href="{{ route('gift-code.index') }}"><i class="fa fa-circle-o"></i> Danh sách số</a></li>
+          <li {{ in_array(\Request::route()->getName(), ['gift-code.create']) ? "class=active" : "" }} ><a href="{{ route('gift-code.create') }}"><i class="fa fa-circle-o"></i> Thêm số</a></li>        
+        </ul>
+       
+      </li>   
       <li class="treeview {{ in_array(\Request::route()->getName(), ['gift.index', 'gift.create', 'gift.edit']) ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-pencil-square-o"></i> 
@@ -44,20 +58,8 @@
         </ul>
        
       </li>
-      <li {{ in_array(\Request::route()->getName(), ['newsletter.edit', 'newsletter.index']) ? "class=active" : "" }}>
-        <a href="{{ route('newsletter.index') }}">
-          <i class="fa fa-pencil-square-o"></i> 
-          <span>Newsletter</span>         
-        </a>       
-      </li>
-      <li {{ in_array(\Request::route()->getName(), ['contact.edit', 'contact.index']) ? "class=active" : "" }}>
-        <a href="{{ route('contact.index') }}">
-          <i class="fa fa-pencil-square-o"></i> 
-          <span>Liên hệ</span>          
-        </a>       
-      </li>
       
-      <li class="treeview {{ in_array(\Request::route()->getName(), ['loai-thuoc-tinh.index', 'thuoc-tinh.index', 'color.index']) ? 'active' : '' }}">
+      <!-- <li class="treeview {{ in_array(\Request::route()->getName(), ['loai-thuoc-tinh.index', 'thuoc-tinh.index', 'color.index']) ? 'active' : '' }}">
         <a href="#">
           <i class="fa  fa-gears"></i>
           <span>Cài đặt</span>
@@ -66,10 +68,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li {{ \Request::route()->getName() == "settings.index" ? "class=active" : "" }}><a href="{{ route('settings.index') }}"><i class="fa fa-circle-o"></i> Thông tin KLUCKY</a></li>        
+               
           <li {{ \Request::route()->getName() == "account.index" ? "class=active" : "" }}><a href="{{ route('account.index') }}"><i class="fa fa-circle-o"></i> Users</a></li>          
         </ul>
-      </li>
+      </li> -->
       <!--<li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

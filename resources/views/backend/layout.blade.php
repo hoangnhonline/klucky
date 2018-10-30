@@ -108,16 +108,7 @@ $(document).ready(function(){
 
   config.removeButtons = 'Underline,Subscript,Superscript';
 };
-  var editor2 = CKEDITOR.replace('contentNoti',{
-          language : 'vi',
-          height : 100,
-          toolbarGroups : [            
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },          
-            { name: 'links', groups: [ 'links' ] },           
-            '/',
-            
-          ]
-      });
+
 });
 
 </script>
