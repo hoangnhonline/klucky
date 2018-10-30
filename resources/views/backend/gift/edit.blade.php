@@ -51,13 +51,23 @@
                 </div>
                 
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                  <label class="col-md-3 row">Hình ảnh ( 624x468 px)</label>    
+                  <label class="col-md-3 row">Hình</label>    
                   <div class="col-md-9">
                     <img id="thumbnail_image" src="{{ $detail->image_url ? Helper::showImage($detail->image_url ) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
                  
                     <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
                   </div>
                   <input type="hidden" name="image_url" id="image_url" value="{{ $detail->image_url }}"/>
+                  <div style="clear:both"></div>
+                </div> 
+                <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
+                  <label class="col-md-3 row">Hình POPUP WIN</label>    
+                  <div class="col-md-9">
+                    <img id="thumbnail_image_popup" src="{{ $detail->popup_image_url ? Helper::showImage($detail->popup_image_url ) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">
+                 
+                    <button class="btn btn-default btn-sm btnSingleUpload" data-set="popup_image_url" data-image="thumbnail_image_popup" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                  </div>
+                  <input type="hidden" name="popup_image_url" id="popup_image_url" value="{{ $detail->popup_image_url }}"/>
                   <div style="clear:both"></div>
                 </div>   
                     

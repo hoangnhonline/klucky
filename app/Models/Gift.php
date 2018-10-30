@@ -28,6 +28,7 @@ class Gift extends Model  {
                             'slug',                            
                             'amount',
                             'image_url',
+                            'popup_image_url',
                             'display_order',
                             'status',                   
                             'created_user', 

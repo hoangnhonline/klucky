@@ -45,7 +45,7 @@
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
-                  <label class="col-md-3 row">Image </label>    
+                  <label class="col-md-3 row">Hình </label>    
                   <div class="col-md-9">
                     <img id="thumbnail_image" src="{{ old('image_url') ? Helper::showImage(old('image_url')) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">                 
                     <button class="btn btn-default btn-sm btnSingleUpload" data-set="image_url" data-image="thumbnail_image" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
@@ -53,7 +53,15 @@
                   <input type="hidden" name="image_url" id="image_url" value="{{ old('image_url') }}"/>
                   <div style="clear:both"></div>
               </div>  <!--image-->
-                  
+                  <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
+                  <label class="col-md-3 row">Hình POPUP WIN </label>    
+                  <div class="col-md-9">
+                    <img id="thumbnail_image_popup" src="{{ old('popup_image_url') ? Helper::showImage(old('popup_image_url')) : URL::asset('admin/dist/img/img.png') }}" class="img-thumbnail" width="145" height="85">                 
+                    <button class="btn btn-default btn-sm btnSingleUpload" data-set="popup_image_url" data-image="thumbnail_image_popup" type="button"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload</button>
+                  </div>
+                  <input type="hidden" name="popup_image_url" id="popup_image_url" value="{{ old('popup_image_url') }}"/>
+                  <div style="clear:both"></div>
+              </div>  <!--image-->
             </div>              
             <div class="box-footer">
               <button type="submit" class="btn btn-primary">Lưu</button>
