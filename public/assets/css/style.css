@@ -975,10 +975,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .lucky-wrap .randomizer-wrap .random-input span {
     display: inline-block;
-    width: 600px;
-    height: 90px;
-    padding: 12px 24px 8px 19px;
-    overflow: hidden;
+    padding: 5px 24px 8px 19px;
+    width: 415px;
+    height: 55px;
 }
 .lucky-wrap .randomizer-wrap .random-input input {
     border: none;
@@ -1292,6 +1291,11 @@ h1, h2, h3, h4, h5, h6, p {
     }
     .kl_slider .kl_slide_item .kl_starGift .fa-star {
         font-size: 100%;
+    }
+    .kl_formInformation .kl_form_name, .kl_formInformation .kl_form_field {
+        flex: auto;
+        max-width: 100%;
+        font-size: 22px;
     }
     .kl_background_home {
         background: #580011;
