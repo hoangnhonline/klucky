@@ -9,6 +9,7 @@
     <meta http-equiv="content-language" content="vi" />
     <meta name="description" content="@yield('site_description')" />        
     <link rel="canonical" href="{{ url()->current() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('title')" />
@@ -69,25 +70,25 @@
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="" name="username">
+                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="" name="username" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input" id="phone" placeholder="" name="phone">
+                                        <input type="text" class="form-control kl_form_input required" id="phone" placeholder="" name="phone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="Email" class="form-control kl_form_input" id="email" placeholder="" name="email">
+                                        <input type="Email" class="form-control kl_form_input required" id="email" placeholder="" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <select class="form-control kl_form_input" id="type" name="type">
+                                        <select class="form-control kl_form_input required" id="type" name="type">
                                             <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -110,10 +111,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input" placeholder="" id="date_from" name="date_from">
+                                                <input type="text" class="form-control kl_form_input required" placeholder="" id="date_from" name="date_from">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input" placeholder="" id="date_to" name="date_to">
+                                                <input type="text" class="form-control kl_form_input required" placeholder="" id="date_to" name="date_to">
                                             </div>
                                         </div>
                                     </div>

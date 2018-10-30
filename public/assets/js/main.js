@@ -1,6 +1,10 @@
 (function($){
     "use strict";
-
+    $.ajaxSetup({
+      headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
@@ -135,5 +139,27 @@
      });
      $('#btnNhanSo').click(function(){
         $('#infoModal').modal('show');
+     });
+     $('#btnSend').click(function(){
+        var error = 0;
+        $('#contactForm input.required, #contactForm select.required').each(function(){
+          if($.trim($(this).val()) == ""){
+            error++;
+          }
+
+        });
+        if(error > 0){
+          return false;
+        }else{
+          $.ajax({
+            url : $('#contactForm').attr('action'),
+            type : 'POST',
+            data : $('#contactForm').serialize(),
+            dataType : 'json',
+            success : function(data){
+              console.log(data);
+            }
+          });
+        }
      });
 })(jQuery); // End of use strict
