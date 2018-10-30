@@ -94,7 +94,7 @@ class HomeController extends Controller
         
         $rs = GiftCode::where('code', $code)->where('gift_code.status', 1)
                 ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
-                ->select('image_url', 'name', 'code', 'gift_id')
+                ->select('popup_image_url', 'name', 'code', 'gift_id')
                 ->first();
         if(!$rs){
             return json_encode(['success' => 0]);

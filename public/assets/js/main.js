@@ -119,7 +119,7 @@
                 if(data.success == 0){
                     $('#wrongModal').modal('show');
                 }else if(data.success == 1){                    
-                    $('#success_image').attr('src', data.image_url);
+                    $('#success_image').attr('src', data.popup_image_url);
                     $('#success_image').attr('alt', data.name);
                     $('#success_code').html(data.code);
                     $('#successModal').modal('show');

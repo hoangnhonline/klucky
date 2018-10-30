@@ -64,29 +64,30 @@
                             Nhập đầy đủ thông tin để nhận số
                         </p>
                         <div class="kl_formInformation">
-                            <form method="" action="" id="getInfomatio">
+                            <form method="POST" action="{{ route('send-contact') }}" id="contactForm">
+                                {{ csrf_field() }}
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="">
+                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="" name="username">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input" id="phonenumber" placeholder="">
+                                        <input type="text" class="form-control kl_form_input" id="phone" placeholder="" name="phone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="Email" class="form-control kl_form_input" id="email" placeholder="">
+                                        <input type="Email" class="form-control kl_form_input" id="email" placeholder="" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <select class="form-control kl_form_input" id="change">
+                                        <select class="form-control kl_form_input" id="type" name="type">
                                             <option value=""></option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -109,10 +110,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input" placeholder="">
+                                                <input type="text" class="form-control kl_form_input" placeholder="" id="date_from" name="date_from">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input" placeholder="">
+                                                <input type="text" class="form-control kl_form_input" placeholder="" id="date_to" name="date_to">
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +122,7 @@
                                     <label class="col-sm-4 col-form-label kl_form_name"></label>
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="text-center">
-                                            <a href="#" class="kl_btn">
+                                            <a href="javascript:void(0)" id="btnSend" class="kl_btn">
                                                 <span>GỬI ĐI</span>
                                             </a>
                                         </div>
