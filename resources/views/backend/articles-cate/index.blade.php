@@ -56,7 +56,7 @@
                 </td>                
                 <td style="white-space:nowrap">
                 
-                <a class="btn btn-default btn-sm" href="{{ route('news-list', $item->slug ) }}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Xem</a>
+                
                   <a class="btn btn-primary btn-sm" href="{{ route('articles.index', ['cate_id' => $item->id])}}" ><span class="badge">{{ $item->articles->count() }}</span> Nội dung </a>
                   <a href="{{ route( 'articles-cate.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
                 </td>
