@@ -6,9 +6,9 @@
         <div class="kl_main_contact_ct">
             <h2 class="kl_text_contact">MỌI THẮC MẮC SẼ ĐƯỢC GIẢI ĐÁP QUA CÁC KÊNH SAU</h2>
             <div class="kl_qrCode">
-                <img src="{{ URL::asset('assets/images/qrCode.png') }}" alt="">
+                <img src="{{ URL::asset('assets/images/qrCode.png') }}" alt="QR Code">
             </div>
-            <a href="#" class="kl_btn">
+            <a href="https://kos888.com/K8DangKy" class="kl_btn" target="_blank">
                 <span>Nhấp Vào Đây</span>
             </a>
 
