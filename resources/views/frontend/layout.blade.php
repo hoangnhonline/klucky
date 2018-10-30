@@ -51,6 +51,31 @@
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
     <!-- Modal -->
+    <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_betterlucknexttime">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Cơ Hội Vẫn Còn !
+                        </p>
+                        <div class="kl_modal_video">
+                            <img src="{{ URL::asset('assets/images/video.png') }}" alt="video">
+                        </div>
+                        <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
+                        <p class="text-center">
+                            <a href="#" class="kl_btn">
+                                <span>Nhận Thêm Số </span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
             <div class="modal-content kl_modal_content kl_modal_prizes">

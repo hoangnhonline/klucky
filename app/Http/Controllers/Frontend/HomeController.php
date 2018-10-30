@@ -94,13 +94,17 @@ class HomeController extends Controller
         
         $rs = GiftCode::where('code', $code)->where('gift_code.status', 1)
                 ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
-                ->select('image_url', 'name', 'code')
+                ->select('image_url', 'name', 'code', 'gift_id')
                 ->first();
         if(!$rs){
             return json_encode(['success' => 0]);
         }else{
             $arr = $rs->toArray();
-            $arr['success'] = 1;
+            if($arr['gift_id'] == 999){ //lose
+                $arr['success'] = 2;    
+            }else{
+                $arr['success'] = 1;    
+            }            
             return json_encode($arr);
         }
         
