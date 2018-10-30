@@ -118,8 +118,14 @@
                     $('#success_image').attr('alt', data.name);
                     $('#success_code').html(data.code);
                     $('#successModal').modal('show');
+                }else if(data.success == 2){
+                    $('#loseModal').modal('show');
                 }          
               }
         });
      }
+     $('button.close').click(function(){
+        $('#code').val('');
+        $('.number-list span.number').html(0);
+     });
 })(jQuery); // End of use strict

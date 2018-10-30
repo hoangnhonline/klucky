@@ -10,10 +10,10 @@
             <div class="number-box">
                 <div class="number-list">
                     <span class="number">0</span>
-                    <span class="number">1</span>
-                    <span class="number">2</span>
-                    <span class="number">3</span>
-                    <span class="number">4</span>
+                    <span class="number">0</span>
+                    <span class="number">0</span>
+                    <span class="number">0</span>
+                    <span class="number">0</span>
                 </div>
             </div>
         </div>
