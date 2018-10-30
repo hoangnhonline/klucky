@@ -128,4 +128,7 @@
         $('#code').val('');
         $('.number-list span.number').html(0);
      });
+     $('#btnNhanSo').click(function(){
+        $('#infoModal').modal('show');
+     });
 })(jQuery); // End of use strict
