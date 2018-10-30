@@ -27,7 +27,7 @@
             <p class="get-number-wrap_title">
                 <img src="{{ URL::asset('assets/images/ban-chua-co-so.png') }}" alt="">
             </p>
-            <a href="#" class="kl_btn_home">
+            <a href="javascript:void(0)" id="btnNhanSo" class="kl_btn_home">
                 <span>NHẬN TẠI ĐÂY</span>
             </a>
             <p class="get-number-wrap_text">CHỊU KHÓ QUAY TAY VẬN MAY SẼ ĐẾN</p>

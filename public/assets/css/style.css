@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .kl_contactNow ul li span {
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Tahoma";
 }
 
@@ -1619,7 +1619,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 6px;
     }
     .kl_contactNow ul:last-child {
-        margin-left: 0;
+        margin-left: 5px;
     }
     .kl_contactNow ul li:last-child {
         margin-bottom: 8px;

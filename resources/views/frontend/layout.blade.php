@@ -51,6 +51,102 @@
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
     <!-- Modal -->
+    <div class="modal fade show" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_information">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Nhập đầy đủ thông tin để nhận số
+                        </p>
+                        <div class="kl_formInformation">
+                            <form method="" action="" id="getInfomatio">
+                                <div class="form-group row">
+                                    <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <input type="text" class="form-control kl_form_input" id="phonenumber" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <input type="Email" class="form-control kl_form_input" id="email" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <select class="form-control kl_form_input" id="change">
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <div class="form-inline">
+                                            <div class="kl_form_name form-inline_col px-4 text-right">Từ  Ngày</div>
+                                            <div class="kl_form_name form-inline_col px-4 text-right">Đến Ngày</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-4 col-form-label kl_form_name kl_hide_moblie">Chọn ngày :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <div class="form-inline">
+                                            <div class="form-inline_col">
+                                                <input type="text" class="form-control kl_form_input" placeholder="">
+                                            </div>
+                                            <div class="form-inline_col">
+                                                <input type="text" class="form-control kl_form_input" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label kl_form_name"></label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <div class="text-center">
+                                            <a href="#" class="kl_btn">
+                                                <span>GỬI ĐI</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="line">
+                                <img src="{{ URL::asset('assets/images/line.png') }}" alt="line">
+                            </div>
+                            <div class="kl_register">
+                                <p class="text-center kl_text_while">Bạn chưa có tên truy cập hoặc mã giao dịch ?</p>
+                                <div class="btn-group">
+                                    <a href="#" class="kl_btn mr-3">
+                                        <span>CLICK NGAY</span>
+                                    </a>
+                                    <a href="#" class="kl_btn">
+                                        <span>LIÊN HỆ LILY</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
                 <div class="modal-content kl_modal_content kl_modal_betterlucknexttime">
