@@ -43,6 +43,9 @@
                 </div>
             </div>
         </div>
+        <a href="https://zalo.me/g/ntxbmu208" title="Zalo Lily Nguyễn" class="kl_girl" target="_blank">
+            <img src="{{ URL::asset('assets/images/lily.png') }}" alt="Zalo Lily Nguyễn">
+        </a>
     </div>
 </section>
 <!-- Main -->
