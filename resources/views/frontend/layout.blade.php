@@ -40,7 +40,7 @@
 <body @if($routeName != 'home') class="pageChild" @endif>
     
     <div id="Zoom">
-        <div class="kl_background_home">
+        <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @include('frontend.partials.header')            
             @yield('content')            
             <!-- #lucky-wrap -->
