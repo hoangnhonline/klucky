@@ -100,6 +100,11 @@
             checkNo();
         }, 3000);       
      });
+     $('#code').keypress(function (e) {
+        if (e.which == 13) {
+          $('#btnQuayNgay').click();
+        }
+      });
      function checkNo(){
         var code = $('#code').val();
          $.ajax({
