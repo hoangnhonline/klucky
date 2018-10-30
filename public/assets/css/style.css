@@ -28,6 +28,7 @@ body {
     background-attachment: fixed;
 }
 a {
+    color: #ffec8d;
     cursor: pointer;
     text-decoration: none;
     background-color: transparent;
@@ -35,6 +36,7 @@ a {
 }
 a:hover,
 a:focus {
+    color: rgba(255, 236, 141, 0.8);
     text-decoration: none;
     transition: all 0.25s;
 }
