@@ -50,7 +50,63 @@
 
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+            <div class="modal-content kl_modal_content kl_modal_prizes">
+                <div class="kl_btn_close_modal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="kl_modal_title text-center kl_modal_title_size">
+                        Xin chúc mừng !
+                    </p>
+                    <p class="kl_modal_title text-center">
+                        <img src="" alt="" id="success_image">
+                    </p>
+                    <p class="kl_numberGift">
+                        <span class="kl_text_yellow" id="success_code"></span>
+                    </p>
+                    <p class="text-center">
+                        <a href="https://zalo.me/g/ntxbmu208" target="_blank" class="kl_btn">
+                            <span>Nhận thưởng</span>
+                        </a>
+                    </p>
+                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="wrongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+            <div class="modal-content kl_modal_content kl_modal_getNumber">
+                <div class="kl_btn_close_modal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="kl_modal_title text-center kl_modal_title_size mb-4">Số Quý Khách đã nhập không đúng <br>Vui lòng kiểm tra tại đây</p>
+                    <p class="text-center">
+                        <a href="{{ route('huong-dan') }}" title="Kiểm tra ngay" class="kl_btn">
+                            <span>Kiểm tra Ngay</span>
+                        </a>
+                    </p>
+                    <p class="line mt-4 mb-5">
+                        <img src="{{ URL::asset('assets/images/line.png') }}" alt="line">
+                    </p>
+                    <p class="kl_modal_title text-center kl_modal_title_size mb-4">Hoặc liên hệ với Lily Nguyen</p>
+                    <p class="text-center">
+                        <a href="https://zalo.me/g/ntxbmu208" title="Hỗ trợ nhanh" target="_blank" class="kl_btn">
+                            <span>Hỗ Trợ Nhanh</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ===== JS ===== -->
     <script src="{{ URL::asset('assets/js/jquery.min.js') }}"></script>
     <!-- Js Bootstrap -->
@@ -62,6 +118,7 @@
     <script src="{{ URL::asset('assets/js/main.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.number.min.js') }}"></script>    
     <input type="hidden" value="{{ route('get-content') }}" id="route_get_content">
+    <input type="hidden" value="{{ route('check-no') }}" id="route_check_no">
     @yield('js')
 </body>
 

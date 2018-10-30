@@ -4,7 +4,7 @@
 <div class="lucky-wrap">
     <div class="randomizer-wrap">
         <div class="random-input">
-            <span><input type="text" name="random-number" maxlength="5" class="number" placeholder="Nhập số ở đây"></span>
+            <span><input type="text" autocomplete="off" id="code" maxlength="5" class="number" placeholder="Nhập số ở đây"></span>
         </div>
         <div class="number-run-wrap">
             <div class="number-box">

@@ -84,8 +84,26 @@ class HomeController extends Controller
         $id = $request->id ? $request->id : null;
         if($id){
             $content = Articles::find($id)->toArray();
+            return json_encode($content);
         }
-        return json_encode($content);
+        
+    }
+
+    public function checkNo(Request $request){
+        $code = $request->code ? $request->code : null;
+        
+        $rs = GiftCode::where('code', $code)->where('gift_code.status', 1)
+                ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
+                ->select('image_url', 'name', 'code')
+                ->first();
+        if(!$rs){
+            return json_encode(['success' => 0]);
+        }else{
+            $arr = $rs->toArray();
+            $arr['success'] = 1;
+            return json_encode($arr);
+        }
+        
     }
 
 }
