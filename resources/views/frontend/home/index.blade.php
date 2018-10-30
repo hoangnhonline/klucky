@@ -4,7 +4,7 @@
 <div class="lucky-wrap">
     <div class="randomizer-wrap">
         <div class="random-input">
-            <span><input type="text" name="random-number"></span>
+            <span><input type="text" name="random-number" maxlength="5" class="number" placeholder="Nhập số ở đây"></span>
         </div>
         <div class="number-run-wrap">
             <div class="number-box">
@@ -19,7 +19,7 @@
         </div>
         <div class="run-btn-wrap">
             <div class="run-box">
-                <span><button>QUAY NGAY</button></span>
+                <span><button id="btnQuayNgay">QUAY NGAY</button></span>
             </div>
         </div>
 

@@ -37,7 +37,7 @@
     
 </head>
 
-<body>
+<body @if($routeName != 'home') class="pageChild" @endif>
     
     <div id="Zoom">
         <div class="kl_background_home">
@@ -60,6 +60,7 @@
     <script src="{{ URL::asset('assets/lib/slick/slick.min.js') }}"></script>
     <!-- Js Common -->
     <script src="{{ URL::asset('assets/js/main.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/jquery.number.min.js') }}"></script>    
     <input type="hidden" value="{{ route('get-content') }}" id="route_get_content">
     @yield('js')
 </body>
