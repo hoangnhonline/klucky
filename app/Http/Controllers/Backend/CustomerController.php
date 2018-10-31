@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\GiftCode;
+use App\Models\CustomerCode;
+
 use Helper, File, Session, Auth;
 use Maatwebsite\Excel\Facades\Excel;
 class CustomerController extends Controller
@@ -24,7 +27,8 @@ class CustomerController extends Controller
     }
     public function create(Request $request)    { 
         
-        return view('backend.customer.create');
+        $codeList = GiftCode::where('status', 1)->get();
+        return view('backend.customer.create', compact('codeList'));
     }
     public function store(Request $request)
     {
@@ -48,8 +52,20 @@ class CustomerController extends Controller
         ]);   
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
-        Customer::create($dataArr);
-      
+        $rs = Customer::create($dataArr);
+        // xu ly tags
+        if( !empty( $dataArr['so_may_man'] ) && $rs->id ){
+            foreach ($dataArr['so_may_man'] as $code_id) {
+                GiftCode::find($code_id)->update(['status' => 2]);
+                $model = new CustomerCode;
+                $model->customer_id = $rs->id;
+                $model->code_id  = $code_id;
+                $model->status = 1;
+                $model->save();
+
+
+            }
+        }
         Session::flash('message', 'Tạo mới thành công');
 
         return redirect()->route('customer.index');
@@ -80,6 +96,25 @@ class CustomerController extends Controller
         $model = Customer::find($dataArr['id']);
 
         $model->update($dataArr);
+
+        $selectedList = CustomerCode::where(['customer_id' => $dataArr['id']])->get();
+        if($selectedList->count()> 0){
+            foreach($selectedList as  $tmpa){
+                GiftCode::find($tmpa->code_id)->update(['status'=>1]);
+            }
+        }
+        CustomerCode::where(['customer_id' => $dataArr['id']])->delete();
+        // xu ly tags
+        if( !empty( $dataArr['so_may_man'] )){
+            foreach ($dataArr['so_may_man'] as $code_id) {
+                GiftCode::find($code_id)->update(['status' => 2]);
+                $model = new CustomerCode;
+                $model->customer_id = $dataArr['id'];
+                $model->code_id  = $code_id;
+                $model->status = 1;
+                $model->save();
+            }
+        }
         Session::flash('message', 'Cập nhật thành công');        
 
         return redirect()->route('customer.index');
@@ -155,11 +190,18 @@ class CustomerController extends Controller
     */
     public function edit($id)
     {
-        $tagSelected = [];
+        $codeSelected = [];
 
         $detail = Customer::find($id);
+        $tmpArr = CustomerCode::where(['customer_id' => $id])->join('gift_code', 'gift_code.id', '=', 'customer_code.code_id')->join('gift', 'gift.id', '=', 'gift_code.gift_id')->get();
+        if( $tmpArr->count() > 0 ){
+            foreach ($tmpArr as $value) {
+                $codeSelected[] = $value->code_id;
+            }
+        }
 
-        return view('backend.customer.edit', compact('detail'));
+        $codeList = GiftCode::where('status', 1)->get();
+        return view('backend.customer.edit', compact('detail', 'codeSelected', 'codeList', 'tmpArr'));
     }
 
     /**
