@@ -20,7 +20,7 @@
     <div class="row">
       <!-- left column -->
 
-      <div class="col-md-8">
+      <div class="col-md-7">
         <!-- general form elements -->
         <div class="box box-primary">
           <div class="box-header with-border">
@@ -101,8 +101,44 @@
         <!-- /.box -->     
 
       </div>
-      <div class="col-md-3">
-        
+      <div class="col-md-5">
+         <!-- general form elements -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">SỐ MAY MẮN</h3>
+          </div>
+          <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Số</th>
+                  <th>Quà</th>
+                  <th>Trạng thái</th>
+                  <th></th>
+                </tr>
+                @if( $tmpArr->count() > 0)
+                  @foreach( $tmpArr as $item )
+                  <tr>
+                    <td>{{ $item->code }}</td>
+                    <td>{{ $item->name }}</td>                    
+                    <td>
+                      @if($item->status == 1)
+                      Chưa quay
+                      @elseif($item->status == 2)                     
+                      Đã nhận quà
+                      @endif
+                    </td>
+                    <td></td>
+                  </tr>
+                  @endforeach    
+
+                @endif
+              </table>
+            
+        </div>
+        <!-- /.box -->     
+
+      </div>
       <!--/.col (left) -->      
     </div>
     </form>

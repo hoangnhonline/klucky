@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/store', ['as' => 'customer.store', 'uses' => 'CustomerController@store']);
         Route::get('{id}/edit',   ['as' => 'customer.edit', 'uses' => 'CustomerController@edit']);
         Route::get('/export',   ['as' => 'customer.export', 'uses' => 'CustomerController@download']);
+        Route::get('{id}/code',   ['as' => 'customer.code', 'uses' => 'CustomerController@giftCode']);
         Route::post('/update', ['as' => 'customer.update', 'uses' => 'CustomerController@update']);
         Route::get('{id}/destroy', ['as' => 'customer.destroy', 'uses' => 'CustomerController@destroy']);
     });
