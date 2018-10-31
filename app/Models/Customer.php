@@ -23,5 +23,5 @@ class Customer extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['username', 'email', 'phone', 'status', 'type', 'date_from', 'date_to', 'updated_user'];
+    protected $fillable = ['username', 'email', 'phone', 'status', 'type', 'date_from', 'date_to', 'updated_user', 'cmnd'];
 }

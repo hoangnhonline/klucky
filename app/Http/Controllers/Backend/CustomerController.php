@@ -22,6 +22,68 @@ class CustomerController extends Controller
         $model->status = 2;
         $model->save();
     }
+    public function create(Request $request)    { 
+        
+        return view('backend.customer.create');
+    }
+    public function store(Request $request)
+    {
+        $dataArr = $request->all();        
+        $this->validate($request,[                                    
+            'username' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'type' => 'required',
+            'date_from' => 'required',          
+            'date_to' => 'required',            
+        ],
+        [   
+            'username.required' => 'Bạn chưa nhập tên đăng nhập',                                 
+            'email.required' => 'Bạn chưa nhập số điện thoại',                                 
+            'phone.required' => 'Bạn chưa nhập email',                                 
+            'type.required' => 'Bạn chưa chọn cách quy đổi',                                 
+            'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
+            'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
+            
+        ]);   
+        $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
+        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
+        Customer::create($dataArr);
+      
+        Session::flash('message', 'Tạo mới thành công');
+
+        return redirect()->route('customer.index');
+    }
+    public function update(Request $request)
+    {
+        $dataArr = $request->all();
+        $this->validate($request,[                                    
+            'username' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'type' => 'required',
+            'date_from' => 'required',          
+            'date_to' => 'required',            
+        ],
+        [   
+            'username.required' => 'Bạn chưa nhập tên đăng nhập',                                 
+            'email.required' => 'Bạn chưa nhập số điện thoại',                                 
+            'phone.required' => 'Bạn chưa nhập email',                                 
+            'type.required' => 'Bạn chưa chọn cách quy đổi',                                 
+            'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
+            'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
+            
+        ]);   
+        $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
+        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to'])); 
+        
+        $model = Customer::find($dataArr['id']);
+
+        $model->update($dataArr);
+        Session::flash('message', 'Cập nhật thành công');        
+
+        return redirect()->route('customer.index');
+    }
     public function index(Request $request)
     {
         $status = isset($request->status) ? $request->status : null;
@@ -44,7 +106,7 @@ class CustomerController extends Controller
        
         $items = $query->orderBy('id', 'desc')->paginate(20);
         
-        return view('backend.contact.index', compact( 'items', 'email', 'status', 'phone'));
+        return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone'));
     }    
     public function download()
     {
@@ -60,7 +122,7 @@ class CustomerController extends Controller
             ];
         }        
         
-        Excel::create('contact_' . date('YmdHi'), function ($excel) use ($contents) {
+        Excel::create('customer_' . date('YmdHi'), function ($excel) use ($contents) {
             // Set sheets
             $excel->sheet('Email', function ($sheet) use ($contents) {
                 $sheet->fromArray($contents, null, 'A1', false, false);
@@ -97,7 +159,7 @@ class CustomerController extends Controller
 
         $detail = Customer::find($id);
 
-        return view('backend.contact.edit', compact('detail'));
+        return view('backend.customer.edit', compact('detail'));
     }
 
     /**
@@ -107,28 +169,7 @@ class CustomerController extends Controller
     * @param  int  $id
     * @return Response
     */
-    public function update(Request $request)
-    {
-        $dataArr = $request->all();
-        
-        $this->validate($request,[                              
-            'email' => 'required|unique:contact,email,'.$dataArr['id'],
-        ],
-        [   
-            'email.required' => 'Bạn chưa nhập email',
-            'email.unique' => 'Email đã được sử dụng.'
-        ]);
-    
-        $dataArr['updated_user'] = Auth::user()->id;
-        
-        $model = Customer::find($dataArr['id']);
-
-        $model->update($dataArr);
-
-        Session::flash('message', 'Cập nhật thành công');        
-
-        return redirect()->route('contact.edit', $dataArr['id']);
-    }
+   
 
     /**
     * Remove the specified resource from storage.
@@ -143,7 +184,7 @@ class CustomerController extends Controller
         $model->delete();
 
         // redirect
-        Session::flash('message', 'Xóa contact thành công');
-        return redirect()->route('contact.index');
+        Session::flash('message', 'Xóa customer thành công');
+        return redirect()->route('customer.index');
     }
 }

@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Khách hàng liên hệ
+    Khách hàng nhận số
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route( 'contact.index') }}">Khách hàng liên hệ</a></li>
+    <li><a href="{{ route( 'customer.index') }}">Khách hàng nhận số</a></li>
     <li class="active">Danh sách</li>
   </ol>
 </section>
@@ -20,12 +20,13 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif     
+      <a href="{{ route('customer.create') }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Thêm khách hàng</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('contact.index') }}" id="frmContact">                                                
+          <form class="form-inline" role="form" method="GET" action="{{ route('customer.index') }}" id="frmContact">                                                
             <div class="form-group">
               <label for="name">Email :</label>
               <input type="text" class="form-control" name="email" value="{{ $email }}">
@@ -54,7 +55,7 @@
         
         <!-- /.box-header -->
         <div class="box-body">
-        <!-- <a href="{{ route('contact.export') }}" class="btn btn-info btn-sm" style="margin-bottom:5px;float:right" target="_blank">Export</a> -->
+        <!-- <a href="{{ route('customer.export') }}" class="btn btn-info btn-sm" style="margin-bottom:5px;float:right" target="_blank">Export</a> -->
           <div style="text-align:center">
             {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone] )->links() }}
           </div>  
@@ -84,7 +85,7 @@
                 </td>
                 <td>
                   @if($item->email != '')
-                  <a href="{{ route( 'contact.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
+                  <a href="{{ route( 'customer.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
                   @endif
                 </td>
                 <td>
@@ -99,11 +100,12 @@
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
                 </td>
                 <td style="white-space:nowrap">{{ date('d-m-Y H:i', strtotime($item->created_at)) }}</td>
-                <td style="white-space:nowrap">   
+                <td style="white-space:nowrap;text-align: right;">   
                 @if($item->status == 1)                               
-                  <button class="btn btn-success btn-sm change-status" data-column="status" data-value="2" data-table="contact" data-id="{{ $item->id }}">Đã gửi số</button>
+                  <button class="btn btn-success btn-sm change-status" data-column="status" data-value="2" data-table="customer" data-id="{{ $item->id }}">Đã gửi số</button>
                   @endif
-                  <a onclick="return callDelete('{{ $item->email }}','{{ route( 'contact.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>
+                  <a href="{{ route( 'customer.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <a onclick="return callDelete('{{ $item->username }}','{{ route( 'customer.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
                   
                 </td>
               </tr> 

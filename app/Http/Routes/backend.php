@@ -17,13 +17,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('/', ['as' => 'report.index', 'uses' => 'ReportController@index']);     
         Route::post('/search-price-other-site', ['as' => 'crawler.search-price-other-site', 'uses' => 'CompareController@search']);
     });
-    Route::group(['prefix' => 'contact'], function () {
-        Route::get('/', ['as' => 'contact.index', 'uses' => 'ContactController@index']);
-        Route::post('/store', ['as' => 'contact.store', 'uses' => 'ContactController@store']);
-        Route::get('{id}/edit',   ['as' => 'contact.edit', 'uses' => 'ContactController@edit']);
-        Route::get('/export',   ['as' => 'contact.export', 'uses' => 'ContactController@download']);
-        Route::post('/update', ['as' => 'contact.update', 'uses' => 'ContactController@update']);
-        Route::get('{id}/destroy', ['as' => 'contact.destroy', 'uses' => 'ContactController@destroy']);
+    Route::group(['prefix' => 'customer'], function () {
+        Route::get('/create', ['as' => 'customer.create', 'uses' => 'CustomerController@create']);
+        Route::get('/', ['as' => 'customer.index', 'uses' => 'CustomerController@index']);
+        Route::post('/store', ['as' => 'customer.store', 'uses' => 'CustomerController@store']);
+        Route::get('{id}/edit',   ['as' => 'customer.edit', 'uses' => 'CustomerController@edit']);
+        Route::get('/export',   ['as' => 'customer.export', 'uses' => 'CustomerController@download']);
+        Route::post('/update', ['as' => 'customer.update', 'uses' => 'CustomerController@update']);
+        Route::get('{id}/destroy', ['as' => 'customer.destroy', 'uses' => 'CustomerController@destroy']);
     });
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
@@ -58,14 +59,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/update', ['as' => 'newsletter.update', 'uses' => 'NewsletterController@update']);
         Route::get('{id}/destroy', ['as' => 'newsletter.destroy', 'uses' => 'NewsletterController@destroy']);
     });
-    Route::group(['prefix' => 'contact'], function () {
-        Route::get('/', ['as' => 'contact.index', 'uses' => 'ContactController@index']);
-        Route::post('/store', ['as' => 'contact.store', 'uses' => 'ContactController@store']);
-        Route::get('{id}/edit',   ['as' => 'contact.edit', 'uses' => 'ContactController@edit']);
-        Route::get('/export',   ['as' => 'contact.export', 'uses' => 'ContactController@download']);
-        Route::post('/update', ['as' => 'contact.update', 'uses' => 'ContactController@update']);
-        Route::get('{id}/destroy', ['as' => 'contact.destroy', 'uses' => 'ContactController@destroy']);
-    });
+    
     Route::post('/tmp-upload', ['as' => 'image.tmp-upload', 'uses' => 'UploadController@tmpUpload']);
     Route::post('/tmp-upload-multiple', ['as' => 'image.tmp-upload-multiple', 'uses' => 'UploadController@tmpUploadMultiple']);
     Route::post('/update-order', ['as' => 'update-order', 'uses' => 'GeneralController@updateOrder']);

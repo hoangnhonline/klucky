@@ -58,13 +58,20 @@
         </ul>
        
       </li>
-      <li class="{{ in_array(\Request::route()->getName(), ['contact.index', 'contact.edit']) ? 'active' : '' }}">
-        <a href="{{ route('contact.index') }}">
+      <li class="treeview {{ in_array(\Request::route()->getName(), ['customer.index', 'customer.create', 'customer.edit']) ? 'active' : '' }}">
+        <a href="#">
           <i class="fa fa-pencil-square-o"></i> 
-          <span>Liên hệ nhận số</span>         
+          <span>Khách hàng nhận số</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
         </a>
+        <ul class="treeview-menu">
+          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index']) ? "class=active" : "" }}><a href="{{ route('customer.index') }}"><i class="fa fa-circle-o"></i> Danh dách</a></li>
+          <li {{ in_array(\Request::route()->getName(), ['customer.create']) ? "class=active" : "" }} ><a href="{{ route('customer.create') }}"><i class="fa fa-circle-o"></i> Thêm khách hàng</a></li>     
+        </ul>
        
-      </li>
+      </li>      
       
      <li class="{{ in_array(\Request::route()->getName(), ['settings.index']) ? 'active' : '' }}">
         <a href="{{ route('settings.index') }}">
