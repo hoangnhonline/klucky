@@ -5,6 +5,7 @@ Route::post('backend/login', ['as' => 'backend.check-login', 'uses' => 'Backend\
 Route::get('backend/logout', ['as' => 'backend.logout', 'uses' => 'Backend\UserController@logout']);
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => 'isAdmin'], function()
 {    
+    Route::get('/update-status', ['as' => 'update-status', 'uses' => 'ContactController@updateStatus']);
     Route::group(['prefix' => 'compare'], function () {
         Route::get('/', ['as' => 'compare.index', 'uses' => 'CompareController@index']);
     });

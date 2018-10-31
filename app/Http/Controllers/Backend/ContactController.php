@@ -16,6 +16,12 @@ class ContactController extends Controller
     *
     * @return Response
     */
+    public function updateStatus(Request $request)
+    {               
+        $model = Contact::find( $request->id );
+        $model->status = 2;
+        $model->save();
+    }
     public function index(Request $request)
     {
         $status = isset($request->status) ? $request->status : null;
