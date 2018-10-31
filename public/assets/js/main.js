@@ -5,7 +5,10 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+      minDate: 0,
+      dateFormat: 'dd/mm/yy',
+    });
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
