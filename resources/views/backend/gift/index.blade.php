@@ -35,7 +35,9 @@
             <tr>
               <th style="width: 1%">#</th>  
                <th width="150">Thumbnail</th>                          
-              <th>Tên quà</th>              
+              <th>Tên quà</th>
+              <th class="text-right">Số lượng</th>              
+              <th>Số sao</th>              
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -51,8 +53,12 @@
                 </td>       
                 <td>                  
                   <a href="{{ route( 'gift.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a>
+                  @if($item->top == 1)
+                  <label class="label label-danger">TOP</label>
+                  @endif
                 </td>                               
-                 
+                 <td class="text-right">{{ number_format($item->amount) }}</td>
+                 <td>{{ number_format($item->star) }}</td>
                 <td style="white-space:nowrap">                  
                   <a href="{{ route( 'gift.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning  btn-sm">Chỉnh sửa</a>                 
                   
