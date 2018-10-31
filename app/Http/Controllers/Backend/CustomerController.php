@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Models\Customer;
 use Helper, File, Session, Auth;
 use Maatwebsite\Excel\Facades\Excel;
-class ContactController extends Controller
+class CustomerController extends Controller
 {
     /**
     * Display a listing of the resource.
@@ -18,7 +18,7 @@ class ContactController extends Controller
     */
     public function updateStatus(Request $request)
     {               
-        $model = Contact::find( $request->id );
+        $model = Customer::find( $request->id );
         $model->status = 2;
         $model->save();
     }
@@ -29,7 +29,7 @@ class ContactController extends Controller
         $email = isset($request->email) && $request->email != '' ? $request->email : '';
         $phone = isset($request->phone) && $request->phone != '' ? $request->phone : '';
         
-        $query = Contact::whereRaw('1')->orderBy('id', 'DESC');
+        $query = Customer::whereRaw('1')->orderBy('id', 'DESC');
 
         if( $status > 0){
             $query->where('status', $status);
@@ -49,7 +49,7 @@ class ContactController extends Controller
     public function download()
     {
         $contents = [];
-        $query = Contact::whereRaw('1')->orderBy('id', 'DESC')->get();
+        $query = Customer::whereRaw('1')->orderBy('id', 'DESC')->get();
         $i = 0;
         foreach ($query as $data) {
             $i++;
@@ -95,7 +95,7 @@ class ContactController extends Controller
     {
         $tagSelected = [];
 
-        $detail = Contact::find($id);
+        $detail = Customer::find($id);
 
         return view('backend.contact.edit', compact('detail'));
     }
@@ -121,7 +121,7 @@ class ContactController extends Controller
     
         $dataArr['updated_user'] = Auth::user()->id;
         
-        $model = Contact::find($dataArr['id']);
+        $model = Customer::find($dataArr['id']);
 
         $model->update($dataArr);
 
@@ -139,7 +139,7 @@ class ContactController extends Controller
     public function destroy($id)
     {
         // delete
-        $model = Contact::find($id);
+        $model = Customer::find($id);
         $model->delete();
 
         // redirect
