@@ -18,17 +18,27 @@
         <div class="kl_menu_mobile">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @if($routeName == "home")
                     Trang Chủ
+                    @elseif($routeName == "co-cau-giai")
+                    Cơ Cấu Giải                    
+                    @elseif($routeName == "the-le")
+                    Thể Lệ
+                    @elseif($routeName == "huong-dan")
+                    Hướng Dẫn
+                    @elseif($routeName == "contact")
+                    Liên Hệ
+                    @endif
                     <span class="arrow">
                         <img src="{{ URL::asset('assets/images/arrow-down.png') }}" alt="">
                     </span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item dropdown-item-active" href="{{ route('home') }}">Trang Chủ</a>
-                    <a class="dropdown-item" href="{{ route('co-cau-giai') }}">Cơ Cấu Giải</a>
-                    <a class="dropdown-item" href="{{ route('the-le') }}">Thể Lệ</a>
-                    <a class="dropdown-item" href="{{ route('huong-dan') }}">Hướng Dẫn</a>
-                    <a class="dropdown-item" href="{{ route('contact') }}">Liên Hệ</a>
+                    <a class="dropdown-item @if($routeName == "home") dropdown-item-active @endif" href="{{ route('home') }}">Trang Chủ</a>
+                    <a class="dropdown-item @if($routeName == "co-cau-giai") dropdown-item-active @endif" href="{{ route('co-cau-giai') }}">Cơ Cấu Giải</a>
+                    <a class="dropdown-item @if($routeName == "the-le") dropdown-item-active @endif" href="{{ route('the-le') }}">Thể Lệ</a>
+                    <a class="dropdown-item @if($routeName == "huong-dan") dropdown-item-active @endif" href="{{ route('huong-dan') }}">Hướng Dẫn</a>
+                    <a class="dropdown-item @if($routeName == "contact") dropdown-item-active @endif" href="{{ route('contact') }}">Liên Hệ</a>
                 </div>
             </div>
         </div>
