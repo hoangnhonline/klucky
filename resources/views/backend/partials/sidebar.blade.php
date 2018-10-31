@@ -58,6 +58,13 @@
         </ul>
        
       </li>
+      <li class="{{ in_array(\Request::route()->getName(), ['contact.index', 'contact.edit']) ? 'active' : '' }}">
+        <a href="{{ route('contact.index') }}">
+          <i class="fa fa-pencil-square-o"></i> 
+          <span>Liên hệ nhận số</span>         
+        </a>
+       
+      </li>
       
       <!-- <li class="treeview {{ in_array(\Request::route()->getName(), ['loai-thuoc-tinh.index', 'thuoc-tinh.index', 'color.index']) ? 'active' : '' }}">
         <a href="#">

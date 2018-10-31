@@ -16,7 +16,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('/', ['as' => 'report.index', 'uses' => 'ReportController@index']);     
         Route::post('/search-price-other-site', ['as' => 'crawler.search-price-other-site', 'uses' => 'CompareController@search']);
     });
-    
+    Route::group(['prefix' => 'contact'], function () {
+        Route::get('/', ['as' => 'contact.index', 'uses' => 'ContactController@index']);
+        Route::post('/store', ['as' => 'contact.store', 'uses' => 'ContactController@store']);
+        Route::get('{id}/edit',   ['as' => 'contact.edit', 'uses' => 'ContactController@edit']);
+        Route::get('/export',   ['as' => 'contact.export', 'uses' => 'ContactController@download']);
+        Route::post('/update', ['as' => 'contact.update', 'uses' => 'ContactController@update']);
+        Route::get('{id}/destroy', ['as' => 'contact.destroy', 'uses' => 'ContactController@destroy']);
+    });
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
         Route::get('/create', ['as' => 'pages.create', 'uses' => 'PagesController@create']);
