@@ -102,7 +102,7 @@
                 <td style="white-space:nowrap">{{ date('d-m-Y H:i', strtotime($item->created_at)) }}</td>
                 <td style="white-space:nowrap;text-align: right;">   
                                                                  
-                  <a class="btn btn-success btn-sm" href="{{ route('customer.code', $item->id)}}" ><span class="badge">{{ $item->giftCode->count() }}</span> Số </a>
+                  <a class="btn btn-success btn-sm" href="{{ route('customer.edit', [ 'id' => $item->id ])}}" ><span class="badge">{{ $item->giftCode->count() }}</span> Số </a>
                  
                   <a href="{{ route( 'customer.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
                   <a onclick="return callDelete('{{ $item->username }}','{{ route( 'customer.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
