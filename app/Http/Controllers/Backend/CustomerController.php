@@ -96,7 +96,7 @@ class CustomerController extends Controller
         CustomerCode::where(['customer_id' => $dataArr['id']])->delete();
         // xu ly tags
         if( !empty( $dataArr['so_may_man'] )){
-            foreach ($dataArr['so_may_man'] as $code_id) {
+            foreach ($dataArr['so_may_man'] as $code_id) {               
                 GiftCode::find($code_id)->update(['status' => 2]);
                 $model = new CustomerCode;
                 $model->customer_id = $dataArr['id'];
