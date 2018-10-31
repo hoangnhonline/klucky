@@ -61,7 +61,9 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>                            
-              <th>Thông tin liên hệ</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Số điện thoại</th>
               <th>Quy đổi</th>
               <th>Thời gian</th>
               <th width="10%">Thời gian gửi</th>
@@ -79,13 +81,16 @@
                   @if($item->username != '')
                   {{ $item->username }}</br>
                   @endif
+                </td>
+                <td>
                   @if($item->email != '')
-                  <a href="{{ route( 'contact.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a> -
+                  <a href="{{ route( 'contact.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
                   @endif
+                </td>
+                <td>
                   @if($item->phone != '')
                   {{ $item->phone }}</br>
                   @endif
-
                 </td>
                 <td>                  
                   {{ $item->type == 1 ? "Quy Đổi Tiền Gửi" : "Quy Đổi Tiền Thua Cược" }}
