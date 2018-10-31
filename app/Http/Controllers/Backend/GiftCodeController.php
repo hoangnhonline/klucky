@@ -23,9 +23,8 @@ class GiftCodeController extends Controller
         $giftList = Gift::all();
 
         $type = isset($request->type) ? $request->type : null;
-        $gift_id = isset($request->gift_id) ? $request->gift_id : null;
-
-        $status = isset($request->status) ? $request->status : 1; // chua nhan qua
+        $gift_id = isset($request->gift_id) ? $request->gift_id : null;        
+        $status = isset($request->status) ? $request->status : 1; // chua gan
 
         $code = isset($request->code) && $request->code != '' ? $request->code : '';
         
@@ -36,7 +35,9 @@ class GiftCodeController extends Controller
         if( $gift_id > 0){
             $query->where('gift_id', $gift_id);
         }
-        
+        if( $status > 0){
+            $query->where('status', $status);
+        }
         if( $code != ''){
             $query->where('code', 'LIKE', '%'.$code.'%');
         }
