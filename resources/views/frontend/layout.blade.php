@@ -41,8 +41,14 @@
     
     <div id="Zoom">
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
+            @if($routeName != "home")
+            <div class="wrapper2">
+            @endif
             @include('frontend.partials.header')            
-            @yield('content')            
+            @yield('content')   
+            @if($routeName != "home")
+            </div>
+            @endif
             <!-- #lucky-wrap -->
         </div>
         <!-- #Zoom -->
