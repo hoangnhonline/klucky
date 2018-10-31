@@ -3,7 +3,7 @@
 @section('content')
 <section class="kl_main2">
     <p class="text-center mb-3 kl_rewards_title">
-        <span>Đã có xxxxx người may mắn nhận quà</span>
+        <span>Đã có {{ $settingArr['so_nguoi_trung'] }} người may mắn nhận quà</span>
     </p>
     <div class="kl_slider">
         <div class="kl_autoplay kl_autoplay_style">
