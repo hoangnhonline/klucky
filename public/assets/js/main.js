@@ -147,8 +147,7 @@
             error++;
           }
 
-        });
-        console.log(error);
+        });        
         if(error > 0){
           return false;
         }else{          
@@ -158,7 +157,8 @@
             data : $('#contactForm').serialize(),
             dataType : 'json',
             success : function(data){
-              console.log(data);
+              $('.modal').modal('hide');
+              $('#sendSuccessModal').modal('show');
             }
           });
         }

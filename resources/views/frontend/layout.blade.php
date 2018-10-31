@@ -52,6 +52,34 @@
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
     <!-- Modal -->
+    <div class="modal fade" id="sendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_betterlucknexttime kl_modal_submit">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}" alt="close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Chúng tôi nhận được thông tin thành công<br>Ban Tổ Chức sẽ liên hệ lại Quý Khách<br>Trong thời gian không quá 24 giờ.
+                        </p>
+                        <div class="kl_modal_video">
+                            <img src="{{ URL::asset('assets/images/video.png') }}" alt="video">
+                        </div>
+                        <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
+                         <div class="line">
+                            <img src="{{ URL::asset('assets/images/line.png') }}" alt="Line">
+                        </div>
+                        <p class="text-center">
+                            <a href="https://zalo.me/g/ntxbmu208" target="_blank" class="kl_btn mt-5">
+                                <span>LIÊN HỆ LILY</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="modal fade show" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
                 <div class="modal-content kl_modal_content kl_modal_information">
@@ -95,7 +123,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                               <!--  <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-4 col-form-label"></label>
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline">
@@ -103,16 +131,16 @@
                                             <div class="kl_form_name form-inline_col px-4 text-right">Đến Ngày</div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-4 col-form-label kl_form_name kl_hide_moblie">Chọn ngày :</label>
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required" placeholder="" id="date_from" name="date_from">
+                                                <input type="date" class="form-control kl_form_input required" placeholder="Từ ngày..." id="date_from" name="date_from">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required" placeholder="" id="date_to" name="date_to">
+                                                <input type="date" class="form-control kl_form_input required" placeholder="Đến ngày..." id="date_to" name="date_to">
                                             </div>
                                         </div>
                                     </div>

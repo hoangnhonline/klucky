@@ -9,6 +9,7 @@ use App\Models\ArticlesCate;
 use App\Models\Settings;
 use App\Models\Gift;
 use App\Models\GiftCode;
+use App\Models\Contact;
 
 
 use Helper, File, Session, Auth, Hash, Mail;
@@ -110,7 +111,8 @@ class HomeController extends Controller
         
     }
     public function sendContact(Request $request){
-        dd($request->input());
+        $dataArr = $request->all();
+        Contact::create($dataArr);        
     }
 
 }
