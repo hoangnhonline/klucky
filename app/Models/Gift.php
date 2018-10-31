@@ -32,7 +32,7 @@ class Gift extends Model  {
                             'display_order',
                             'status',   
                             'top',  
-                            'amount'              
+                            'amount',              
                             'created_user', 
                             'updated_user'
                         ];
