@@ -27,7 +27,7 @@
     <link rel="icon" href="{{ URL::asset('assets/favicon.ico') }}" type="image/x-icon">  
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/run_css.css') }}">
-
+    <link rel="stylesheet" href="{{ URL::asset('assets/lib/jquery-ui/jquery-ui.min.css') }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -135,12 +135,12 @@
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-4 col-form-label kl_form_name kl_hide_moblie">Chọn ngày :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <div class="form-inline">
+                                        <div class="form-inline row">
                                             <div class="form-inline_col">
-                                                <input type="date" class="form-control kl_form_input required" placeholder="Từ ngày..." id="date_from" name="date_from">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="date" class="form-control kl_form_input required" placeholder="Đến ngày..." id="date_to" name="date_to">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to">
                                             </div>
                                         </div>
                                     </div>
@@ -262,7 +262,9 @@
     <script src="{{ URL::asset('assets/lib/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ URL::asset('assets/lib/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- Js Slick -->
-    <script src="{{ URL::asset('assets/lib/slick/slick.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/slick/slick.min.js') }}"></script>    
+    <script src="{{ URL::asset('assets/lib/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/lib/jquery-ui/jquery.ui.datepicker-vi-VN.js') }}"></script>    
     <!-- Js Common -->
     <script src="{{ URL::asset('assets/js/main.js') }}"></script>
     <script src="{{ URL::asset('assets/js/jquery.number.min.js') }}"></script>    

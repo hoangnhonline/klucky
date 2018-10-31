@@ -10,7 +10,6 @@
 @import url(../lib/slick/slick.css);
 @import url(../lib/slick/slick-theme.css);
 @import url(../font/fontawesome/css/font-awesome.min.css);
-@import url(../lib/jquery-ui/jquery-ui.css);
 
 /*===== Layout Style =====*/
 body {
@@ -205,7 +204,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .kl_modal .modal-body {
     padding-top: 0;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 .kl_modal_title {
     font-family: "iCielBrandonText";
@@ -217,7 +216,7 @@ h1, h2, h3, h4, h5, h6, p {
     -webkit-text-fill-color: transparent;
 }
 .kl_text_while {
-    font-size: 20px;
+    font-size: 22.4px;
     font-family: "iCielBrandonText";
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -230,14 +229,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .kl_btn_close_modal {
-    padding: 10px 15px 0;
+    padding: 15px 15px 0;
 }
 .kl_btn_close_modal .close {
     opacity: 1;
-}
-.kl_btn_close_modal .close img {
-    width: 15px;
-    height: 15px;
 }
 .kl_btn {
     border-radius: 12px;
@@ -245,22 +240,16 @@ h1, h2, h3, h4, h5, h6, p {
     background-image: -webkit-linear-gradient( 90deg, rgb(160,121,75) 0%, rgb(166,103,40) 0%, rgb(172,84,5) 0%, rgb(214,164,79) 49%, rgb(255,244,153) 99%);
     background-image: -ms-linear-gradient( 90deg, rgb(160,121,75) 0%, rgb(166,103,40) 0%, rgb(172,84,5) 0%, rgb(214,164,79) 49%, rgb(255,244,153) 99%);
     box-shadow: 0.052px 0.999px 0.99px 0.01px rgba(15, 15, 15, 0.004);
-    width: 270px;
-    height: 60px;
-    line-height: 60px;
+    width: 310px;
+    height: 76px;
+    line-height: 76px;
     display: block;
     margin: 0 auto;
     text-align: center;
     border: none;
-    cursor: pointer;
-    transition: all 0.25s;
-}
-.kl_btn:hover {
-    opacity: 0.9;
-    transition: all 0.25s;
 }
 .kl_btn span {
-    font-size: 27px;
+    font-size: 32px;
     font-family: "Cabin";
     color: rgb(0, 0, 0);
     font-weight: bold;
@@ -273,10 +262,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Modal Prizes */
 .kl_modal_prizes .kl_modal_title {
-    font-size: 38px;
+    font-size: 42px;
 }
 .kl_modal_prizes .kl_numberGift {
-    margin: 10px 0 30px;
+    margin: 20px 0 30px;
     position: relative;
     text-align: center;
 }
@@ -296,7 +285,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0 auto;
 }
 .kl_modal_prizes .kl_btn {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .kl_modal_prizes .kl_text_yellow {
@@ -316,33 +305,30 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* kl_modal_betterlucknexttime */
 .kl_modal_betterlucknexttime .kl_modal_title_size {
-    font-size: 38px;
-    margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 30px;
     font-family: "icielBrandonText";
 }
 .kl_modal_betterlucknexttime .kl_modal_video {
-    margin: 0 auto 15px;
+    margin: 0 auto 25px;
     text-align: center;
     border-radius: 4px;
 }
 .kl_modal_betterlucknexttime .kl_text_while {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 .kl_modal_betterlucknexttime .kl_btn span {
-    font-size: 28px;
+    font-size: 34px;
 }
 
 /* Modal Information */
 .kl_modal_information .kl_modal_title_size {
     font-family: "icielBrandonText";
-    font-size: 38px;
-    margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 30px;
 }
 .kl_formInformation {
     padding: 0 140px;
-}
-.kl_formInformation .form-group {
-    margin-bottom: 10px;
 }
 .kl_formInformation .kl_form_name {
     font-size: 18px;
@@ -352,16 +338,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .kl_formInformation .form-inline_col {
     width: 50%;
-    padding: 0 15px;
 }
 
 .kl_formInformation .kl_form_input {
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
     box-shadow: inset 0px 1px 1.5px 0.5px rgba(32, 13, 2, 0.44);
-    width: 100%;
-    height: 34px;
-    line-height: 34px;
 }
 .kl_formInformation .form-control:focus {
     background-color: rgb(255, 255, 255);
@@ -374,26 +356,19 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0 auto;
 }
 .kl_register {
-    margin-top: 10px;
-}
-.kl_register .btn-group {
-    display: block;
-    text-align: center;
-}
-.kl_register .btn-group .kl_btn {
-    display: inline-block;
+    margin-top: 20px;
 }
 .kl_register .kl_text_while {
     margin-bottom: 20px;
 }
 
 .kl_modal_submit .kl_modal_title_size {
-    font-size: 35px;
+    font-size: 44px;
 }
 
 /* Get Number */
 .kl_modal_getNumber .kl_modal_title_size {
-    font-size: 38px;
+    font-size: 48px;
     font-family: "icielBrandonText";
 }
 
@@ -743,7 +718,8 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.5;
     height: 953px;
     overflow-y: scroll;
-    padding: 40px 40px 100px;
+    padding: 40px 40px 75px;
+    margin-bottom: 20px;
 }
 .kl_content_ct::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -785,16 +761,19 @@ h1, h2, h3, h4, h5, h6, p {
     background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(255,243,152) 0%, rgb(184,0,0) 0%, rgb(134,0,0) 52%, rgb(84,0,0) 100%);
     box-shadow: 0px 2px 53.2px 41.8px rgba(15, 15, 15, 0.43);
 }
-/*.kl_main_contact:after {
-    content: url(../images/lily.png);
-    position: absolute;
-    right: -50px;
-    bottom: -270px;
-}*/
 .kl_girl {
     position: absolute;
     right: -50px;
     bottom: -270px; 
+}
+
+.Layer_1376 {
+  background-image: url("Layer 1376.png");
+  position: absolute;
+  
+  width: 288px;
+  height: 717px;
+  z-index: 187;
 }
 .kl_main_contact_ct {
     width: 680px;
@@ -867,7 +846,7 @@ h1, h2, h3, h4, h5, h6, p {
     vertical-align: top;
 }
 .kl_contactNow ul:last-child {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 .kl_contactNow ul li {
     margin-bottom: 8px;
@@ -880,7 +859,7 @@ h1, h2, h3, h4, h5, h6, p {
     vertical-align: middle;
 }
 .kl_contactNow ul li span {
-    margin-left: 5px;
+    margin-left: 10px;
     font-size: 20px;
     font-family: "Tahoma";
 }
@@ -997,10 +976,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .lucky-wrap .randomizer-wrap .random-input span {
     display: inline-block;
-    width: 600px;
-    height: 90px;
-    padding: 12px 24px 8px 19px;
-    overflow: hidden;
+    padding: 5px 24px 8px 19px;
+    width: 415px;
+    height: 55px;
 }
 .lucky-wrap .randomizer-wrap .random-input input {
     border: none;
@@ -1016,24 +994,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .lucky-wrap .randomizer-wrap .random-input input::-webkit-input-placeholder {
   color: #e8c57e;
-  font-size: 39.68px;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input::-moz-placeholder {
   color: #e8c57e;
-  font-size: 39.68px;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input:-ms-input-placeholder {
   color: #e8c57e;
-  font-size: 39.68px;
+  font-size: 40px;
 }
 .lucky-wrap .randomizer-wrap .random-input input:-moz-placeholder {
   color: #e8c57e;
-  font-size: 39.68px;
+  font-size: 40px;
 }
-.lucky-wrap .randomizer-wrap .random-input input:focus::-webkit-input-placeholder { color:transparent; }
-.lucky-wrap .randomizer-wrap .random-input input:focus:-moz-placeholder { color:transparent; }
-.lucky-wrap .randomizer-wrap .random-input input:focus::-moz-placeholder { color:transparent; }
-.lucky-wrap .randomizer-wrap .random-input input:focus:-ms-input-placeholder { color:transparent; }
 .lucky-wrap .randomizer-wrap .number-run-wrap {
     background: url(../images/bg-number.png) no-repeat center;
     height: 376px;
@@ -1167,9 +1141,6 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
     text-align: center;
     margin: 0 auto 40px;
-}
-.lucky-wrap .randomizer-wrap .get-number-wrap .kl_btn_home:hover {
-    opacity: 0.9;
 }
 .get-number-wrap_text {
     font-size: 37px;
@@ -1322,6 +1293,11 @@ h1, h2, h3, h4, h5, h6, p {
     .kl_slider .kl_slide_item .kl_starGift .fa-star {
         font-size: 100%;
     }
+    .kl_formInformation .kl_form_name, .kl_formInformation .kl_form_field {
+        flex: auto;
+        max-width: 100%;
+        font-size: 22px;
+    }
     .kl_background_home {
         background: #580011;
     }
@@ -1357,12 +1333,12 @@ h1, h2, h3, h4, h5, h6, p {
     .kl_formInformation .kl_form_field {
         flex: auto;
         max-width: 100%;
-        font-size: 22px;
     }
     .kl_formInformation .form-inline_col {
         width: 50%;
         text-align: left !important;
-        padding: 0 15px;
+        padding-left: 0 !important;
+        padding: 0 5px;
     }
     .kl_formInformation .form-inline_col .kl_form_input {
         width: 100%;
@@ -1381,9 +1357,6 @@ h1, h2, h3, h4, h5, h6, p {
         display: none;
     }
     /* Contact */
-    /*.kl_main_contact:after {
-        display: none;
-    }*/
     .kl_girl {
         display: none;
     }
@@ -1651,7 +1624,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 6px;
     }
     .kl_contactNow ul:last-child {
-        margin-left: 0;
+        margin-left: 5px;
     }
     .kl_contactNow ul li:last-child {
         margin-bottom: 8px;
@@ -1731,7 +1704,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-.lucky-wrap .randomizer-wrap .random-input span {
+/*.lucky-wrap .randomizer-wrap .random-input span {
     position: relative;
 }
 .lucky-wrap .randomizer-wrap .random-input span:before {
@@ -1740,12 +1713,11 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
-    /*-webkit-animation: lefttoright 5s infinite;
+    -webkit-animation: lefttoright 5s infinite;
     -webkit-animation-timing-function: linear;
     animation: lefttoright 5s infinite;
-    animation-timing-function: linear;*/
-    
+    animation-timing-function: linear;
+    display: none;
 }
 .lucky-wrap .randomizer-wrap .random-input span:after {
     content: url(../images/linear.png);
@@ -1758,7 +1730,6 @@ h1, h2, h3, h4, h5, h6, p {
     animation: righttoleft 5s infinite;
     animation-timing-function: linear;
     display: none;
-    
 }
 @-webkit-keyframes lefttoright {
     from {left: 0px;}
@@ -1776,4 +1747,4 @@ h1, h2, h3, h4, h5, h6, p {
 @keyframes righttoleft {
     from {right: 0px;}
     to {right: 600px;}
-}
+}*/
