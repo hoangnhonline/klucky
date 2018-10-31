@@ -7,7 +7,7 @@
     });
     $('.datepicker').datepicker({
       minDate: 0,
-      dateFormat: 'dd/mm/yy',
+      dateFormat: 'mm/dd/yy',
     });
     // Change viewport
     function ChangeWiewport() {
