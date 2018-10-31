@@ -71,7 +71,7 @@
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>                             
                 <td>                  
-                  <a style="font-size:18px;color:" href="{{ route( 'articles.edit', [ 'id' => $item->id ]) }}">{{ $item->title }}</a>
+                  <a style="font-size:18px;color:" href="{{ route( 'articles.edit', [ 'id' => $item->id ]) }}">{{ strip_tags($item->title) }}</a>
                 </td>
                 <td style="white-space:nowrap"> 
                                  
