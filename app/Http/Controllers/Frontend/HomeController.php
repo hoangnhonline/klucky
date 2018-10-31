@@ -9,7 +9,7 @@ use App\Models\ArticlesCate;
 use App\Models\Settings;
 use App\Models\Gift;
 use App\Models\GiftCode;
-use App\Models\Contact;
+use App\Models\Customer;
 
 
 use Helper, File, Session, Auth, Hash, Mail;
@@ -110,11 +110,11 @@ class HomeController extends Controller
         }
         
     }
-    public function sendContact(Request $request){
+    public function sendCustomer(Request $request){
         $dataArr = $request->all();       
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));        
-        Contact::create($dataArr);   
+        Customer::create($dataArr);   
         return json_encode(['success' => 1]);     
     }
 

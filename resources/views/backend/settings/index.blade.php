@@ -88,6 +88,10 @@
                   <input type="text" class="form-control" name="link_register" id="link_register" value="{{ $settingArr['link_register'] }}">
                 </div>
                 <div class="form-group">
+                  <label>Số người đã nhận quà</label>
+                  <input type="text" class="form-control" name="so_nguoi_trung" id="so_nguoi_trung" value="{{ $settingArr['so_nguoi_trung'] }}">
+                </div>
+                <div class="form-group">
                   <label>Code google analystic </label>
                   <textarea class="form-control" name="google_analystic" id="google_analystic"  rows="6">{!! $settingArr['google_analystic'] !!}</textarea>
                 </div>   

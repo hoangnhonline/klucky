@@ -3,14 +3,14 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class Contact extends Model  {
+class Customer extends Model  {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'contact';
+	protected $table = 'customer';
 
 	 /**
      * Indicates if the model should be timestamped.

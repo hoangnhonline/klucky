@@ -55,7 +55,7 @@ class GiftController extends Controller
             'name.required' => 'Bạn chưa nhập tên quà'
         ]);       
         
-        
+        $dataArr['top'] = isset($dataArr['top']) ? 1 : 0;  
         $rs = Gift::create($dataArr);        
       
         Session::flash('message', 'Tạo mới quà thành công');
@@ -106,7 +106,7 @@ class GiftController extends Controller
         ]);    
         
         $model = Gift::find($dataArr['id']);
-
+        $dataArr['top'] = isset($dataArr['top']) ? 1 : 0; 
         $model->update($dataArr);
         Session::flash('message', 'Cập nhật quà thành công');        
 

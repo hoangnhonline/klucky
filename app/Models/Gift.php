@@ -30,7 +30,8 @@ class Gift extends Model  {
                             'image_url',
                             'popup_image_url',
                             'display_order',
-                            'status',                   
+                            'status',   
+                            'top',                
                             'created_user', 
                             'updated_user'
                         ];

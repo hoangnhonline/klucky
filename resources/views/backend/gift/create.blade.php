@@ -44,6 +44,25 @@
                   <label>Tên quà<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="top" value="1" {{ old('top') == 1 ? "checked" : "" }}>
+                      TOP Quà
+                    </label>
+                  </div>               
+                </div>
+                <div class="form-group" >
+                  
+                  <label>Số sao</label>
+                  <select class="form-control" name="star" id="star">
+                    <option value="0">-- chọn --</option>
+                    @for($i = 1; $i<=5; $i++)
+                    <option value="{{ $i }}" {{ old('star') == $i ? "selected" : "" }}>{{ $i }}</option>
+                    @endfor
+                  </select>
+                  
+                </div>
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
                   <label class="col-md-3 row">Hình </label>    
                   <div class="col-md-9">
