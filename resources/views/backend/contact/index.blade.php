@@ -85,6 +85,7 @@
                   @if($item->phone != '')
                   {{ $item->phone }}</br>
                   @endif
+
                 </td>
                 <td>                  
                   {{ $item->type == 1 ? "Quy Đổi Tiền Gửi" : "Quy Đổi Tiền Thua Cược" }}
@@ -93,9 +94,11 @@
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
                 </td>
                 <td style="white-space:nowrap">{{ date('d-m-Y H:i', strtotime($item->created_at)) }}</td>
-                <td style="white-space:nowrap">                                  
-                  
-                  <a onclick="return callDelete('{{ $item->email }}','{{ route( 'contact.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger">Xóa</a>
+                <td style="white-space:nowrap">   
+                @if($item->status == 1)                               
+                  <button class="btn btn-success btn-sm change-status" data-column="status" data-value="2" data-table="contact" data-id="{{ $item->id }}">Đã gửi số</button>
+                  @endif
+                  <a onclick="return callDelete('{{ $item->email }}','{{ route( 'contact.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger btn-sm">Xóa</a>
                   
                 </td>
               </tr> 
@@ -140,6 +143,24 @@ function callDelete(name, url){
 $(document).ready(function(){
   $('#status').change(function(){
     $('#frmContact').submit();
+  });
+  $('.change-status').click(function(){
+    if(confirm('Đã gửi số cho khách hàng ?')){
+    var obj = $(this);
+    $.ajax({
+      url: "{{ route('update-status')}}",
+      data:{
+        column : obj.data('column'),
+        value : obj.data('value'),
+        table : obj.data('table'),
+        id : obj.data('id')
+      },
+      type : 'GET',
+      success : function(data){
+        window.location.reload();
+      }
+    });
+    }
   });
 });
 </script>
