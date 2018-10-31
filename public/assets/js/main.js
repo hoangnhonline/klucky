@@ -140,9 +140,9 @@
         $('#code').val('');
         $('.number-list span.number').html(0);
      });
-     $('#btnNhanSo').click(function(){
-        $('#infoModal').modal('show');
-     });
+     $(document).on('click', '#btnNhanSo', function(){
+      $('#infoModal').modal('show');
+     });     
      $('#btnSend').click(function(){
         var error = 0;
         $('#contactForm input.required, #contactForm select.required').each(function(){
