@@ -44,7 +44,7 @@ class HomeController extends Controller
 
     public function coCauGiai(){
         
-        $giftList = Gift::orderBy('id', 'asc')->get();
+        $giftList = Gift::where('id', '<>', 999)->orderBy('id', 'asc')->get();
         $countCode = [];
         foreach($giftList as $gift){
             $countCode[$gift->id] = GiftCode::where('status', 1)->where('gift_id', $gift->id)->count();
