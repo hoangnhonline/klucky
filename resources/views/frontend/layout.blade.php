@@ -135,7 +135,7 @@
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-4 col-form-label kl_form_name kl_hide_moblie">Chọn ngày :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <div class="form-inline">
+                                        <div class="form-inline row">
                                             <div class="form-inline_col">
                                                 <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from">
                                             </div>
