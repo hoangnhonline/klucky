@@ -34,6 +34,14 @@
               <label for="name">&nbsp;&nbsp;Phone :</label>
               <input type="text" class="form-control" name="phone" value="{{ $phone }}">
             </div>
+            <div class="form-group">
+              <label for="name">&nbsp;&nbsp;Trạng thái :</label>
+              <select class="form-control" name="status" id="status">
+                <option value="">--Tất cả--</option>
+                <option value="1" {{ $status == 1  ? "selected" : "" }}>Chưa gửi số</option>
+                <option value="2" {{ $status == 2  ? "selected" : "" }}>Đã gửi số</option>
+              </select>
+            </div>
             <button type="submit" class="btn btn-default">Lọc</button>
           </form>         
         </div>
@@ -48,7 +56,7 @@
         <div class="box-body">
         <a href="{{ route('contact.export') }}" class="btn btn-info btn-sm" style="margin-bottom:5px;float:right" target="_blank">Export</a>
           <div style="text-align:center">
-            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone, 'type' => $type] )->links() }}
+            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone] )->links() }}
           </div>  
           <table class="table table-bordered" id="table-list-data">
             <tr>
@@ -101,7 +109,7 @@
           </tbody>
           </table>
           <div style="text-align:center">
-            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone, 'type' => $type] )->links() }}
+            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone] )->links() }}
           </div>  
         </div>        
       </div>
@@ -130,7 +138,7 @@ function callDelete(name, url){
   return flag;
 }
 $(document).ready(function(){
-  $('#type').change(function(){
+  $('#status').change(function(){
     $('#frmContact').submit();
   });
 });
