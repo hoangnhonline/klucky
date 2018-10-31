@@ -26,7 +26,8 @@
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('gift-code.index') }}">  <div class="form-group">
+          <form class="form-inline" role="form" method="GET" action="{{ route('gift-code.index') }}">  
+            <div class="form-group">
                   <label for="email">Loại</label>
                   <select class="form-control" name="type" id="type">
                     <option value="">-- Tất cả --</option>
@@ -35,7 +36,8 @@
                     <option value="3" {{ $type == 3 ? "selected" : "" }}>SU</option>
                     <option value="4" {{ $type == 4 ? "selected" : "" }}>DP</option>
                   </select>
-                </div>           
+                </div>
+                        
             <div class="form-group">
               <label for="email">&nbsp;&nbsp;&nbsp;Quà</label>
               <select class="form-control" name="gift_id" id="gift_id">
@@ -47,7 +49,16 @@
                 @endif
                 <option value="999" {{ 999 == $gift_id ? "selected" : "" }}>LOSING</option>
               </select>
-            </div>            
+            </div>    
+            <div class="form-group">
+                  <label for="email">Trạng thái</label>
+                  <select class="form-control" name="status" id="status">
+                    <option value="">-- Tất cả --</option>
+                    <option value="1" {{ $status == 1 ? "selected" : "" }}>Chưa gán</option>
+                    <option value="2" {{ $status == 2 ? "selected" : "" }}>Đã gán</option>
+                    <option value="3" {{ $status == 3 ? "selected" : "" }}>Đã nhận quà</option>                    
+                  </select>
+                </div>           
             <div class="form-group">
               <label for="email">&nbsp;&nbsp;&nbsp;Số :</label>
               <input type="text" class="form-control" name="code" value="{{ $code }}">
@@ -72,6 +83,7 @@
               <th style="width: 1%">#</th>              
               <th>Số may mắn</th>
               <th>Quà</th>
+              <th>Trạng thái</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -90,6 +102,15 @@
                   @else
                   LOSING
                   @endif
+                  </td>
+                  <td>
+                    @if($item->status == 1)
+                      <label class="label label-default">Chưa gán</label>
+                    @elseif($item->status == 2)
+                      <label class="label label-info">Đã gán</label>
+                    @elseif($item->status == 3)
+                    <label class="label label-success">Đã nhận quà</label>
+                    @endif
                   </td>
                 <td style="white-space:nowrap"> 
                               
