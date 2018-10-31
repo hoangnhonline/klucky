@@ -97,6 +97,7 @@ class HomeController extends Controller
                 ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
                 ->select('popup_image_url', 'name', 'code', 'gift_id')
                 ->first();
+         
         if(!$rs){
             return json_encode(['success' => 0]);
         }else{
@@ -112,7 +113,8 @@ class HomeController extends Controller
     }
     public function sendContact(Request $request){
         $dataArr = $request->all();
-        Contact::create($dataArr);        
+        Contact::create($dataArr);   
+        return json_encode(['success' => 1]);     
     }
 
 }

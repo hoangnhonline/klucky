@@ -99,10 +99,10 @@
         var myQuaySo = setInterval(quayso, 30);   
         setTimeout(function(){
             clearInterval(myQuaySo);
-        }, 4000);
+        }, 3000);
         setTimeout(function(){
             checkNo();
-        }, 3000);       
+        }, 2000);       
      });
      $('#code').keypress(function (e) {
         if (e.which == 13) {
@@ -150,15 +150,21 @@
         });        
         if(error > 0){
           return false;
-        }else{          
+        }else{     
+          $('#btnSend').attr('disabled','disabled');     
           $.ajax({
             url : $('#contactForm').attr('action'),
             type : 'POST',
             data : $('#contactForm').serialize(),
             dataType : 'json',
+            async: false,
             success : function(data){
-              $('.modal').modal('hide');
-              $('#sendSuccessModal').modal('show');
+              if(data.success == 1){
+                $('#contactForm input, #contactForm select').val('');
+                $('#infoModal').modal('hide');
+                $('#sendSuccessModal').modal('show');  
+              }
+              
             }
           });
         }
