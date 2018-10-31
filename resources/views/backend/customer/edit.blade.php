@@ -74,7 +74,23 @@
                       <input type="text" name="date_to" id="date_to" value="{{ old('date_to', date('m/d/Y',strtotime($detail->date_to))) }}" class="form-control datepicker">
                     </div> 
                 </div>                   
-                  
+                 <div class="form-group">
+                    <label>Số may mắn</label>
+                    <select class="form-control select2" name="so_may_man[]" id="so_may_man" multiple="multiple">                  
+                      @if( $codeList->count() > 0)
+                        @foreach( $codeList as $value )
+                        <option value="{{ $value->id }}" {{ in_array($value->id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->gift->name }}</option>
+                        @endforeach                        
+                      @endif
+                      @if( $tmpArr->count() > 0)
+                        @foreach( $tmpArr as $value )
+                        <option value="{{ $value->id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}</option>
+                        @endforeach                        
+                      @endif
+
+                    </select>
+                    
+                  </div> 
             </div>            
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
@@ -98,6 +114,7 @@
 @section('javascript_page')
 <script type="text/javascript">
 $(document).ready(function(){
+  $(".select2").select2();
   $('.datepicker').datepicker({     
       dateFormat: 'mm/dd/yy'
     });

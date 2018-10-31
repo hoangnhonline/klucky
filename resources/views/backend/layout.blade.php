@@ -116,6 +116,10 @@ $(document).ready(function(){
   .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
     z-index: 1 !important;
   }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice{
+    color: red !important;
+    font-size: 20px !important;
+  }
  
 </style>
 
