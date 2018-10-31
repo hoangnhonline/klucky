@@ -67,7 +67,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index']) ? "class=active" : "" }}><a href="{{ route('customer.index') }}"><i class="fa fa-circle-o"></i> Danh dách</a></li>
+          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index']) ? "class=active" : "" }}><a href="{{ route('customer.index') }}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
           <li {{ in_array(\Request::route()->getName(), ['customer.create']) ? "class=active" : "" }} ><a href="{{ route('customer.create') }}"><i class="fa fa-circle-o"></i> Thêm khách hàng</a></li>     
         </ul>
        
