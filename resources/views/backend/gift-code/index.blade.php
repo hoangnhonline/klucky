@@ -103,7 +103,7 @@
                   LOSING
                   @endif
                   </td>
-                  <td>
+                  <td style="font-size: 18px">
                     @if($item->status == 1)
                       <label class="label label-default">Chưa gán</label>
                     @elseif($item->status == 2)
@@ -162,7 +162,7 @@ function callDelete(name, url){
 $(document).ready(function(){
   
   $('.select2').select2();
-$('#gift_id, #type').change(function(){
+$('#gift_id, #type, #status').change(function(){
   $(this).parents('form').submit();
 });
 
