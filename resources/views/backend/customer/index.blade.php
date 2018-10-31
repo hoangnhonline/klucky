@@ -151,24 +151,7 @@ $(document).ready(function(){
   $('#status').change(function(){
     $('#frmContact').submit();
   });
-  $('.change-status').click(function(){
-    if(confirm('Đã gửi số cho khách hàng ?')){
-    var obj = $(this);
-    $.ajax({
-      url: "{{ route('update-status')}}",
-      data:{
-        column : obj.data('column'),
-        value : obj.data('value'),
-        table : obj.data('table'),
-        id : obj.data('id')
-      },
-      type : 'GET',
-      success : function(data){
-        window.location.reload();
-      }
-    });
-    }
-  });
+  
 });
 </script>
 @stop

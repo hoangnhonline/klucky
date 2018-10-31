@@ -84,12 +84,11 @@
                       @endif
                       @if( $tmpArr->count() > 0)
                         @foreach( $tmpArr as $value )
-                        @if($value->status ==1)
+                        @if($value->status == 1)
                         <option value="{{ $value->id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}</option>
                         @endif
                         @endforeach                        
                       @endif
-
                     </select>
                     
                   </div> 
@@ -125,12 +124,20 @@
                     <td>{{ $item->name }}</td>                    
                     <td>
                       @if($item->status == 1)
-                      Chưa quay
+                      <label class="label label-default">Chưa quay</label>
                       @elseif($item->status == 2)                     
-                      Đã nhận quà
+                      
+                      <label class="label label-success">Đã nhận quà</label>
                       @endif
                     </td>
-                    <td></td>
+                    <td>
+                      @if($item->status == 1)
+
+                      <input type="checkbox" class="change-status" data-value="2" data-column="status" data-id="{{ $item->code_id }}" data-table="customer_code" id="change_status">
+                      <label for="change_status">Đã nhận quà</label>
+                      @endif
+
+                    </td>
                   </tr>
                   @endforeach    
 
@@ -162,6 +169,24 @@ $(document).ready(function(){
   $('.datepicker').datepicker({     
       dateFormat: 'mm/dd/yy'
     });
+  $('.change-status').click(function(){
+    if(confirm('Khách hàng đã nhận quà ?')){
+    var obj = $(this);
+    $.ajax({
+      url: "{{ route('update-status')}}",
+      data:{
+        column : obj.data('column'),
+        value : obj.data('value'),
+        table : obj.data('table'),
+        id : obj.data('id')
+      },
+      type : 'GET',
+      success : function(data){
+        window.location.reload();
+      }
+    });
+    }
+  });
   $("textarea.number").keydown(function (e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||

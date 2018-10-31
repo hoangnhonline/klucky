@@ -21,9 +21,11 @@ class CustomerController extends Controller
     */
     public function updateStatus(Request $request)
     {               
-        $model = Customer::find( $request->id );
+        $model = CustomerCode::where('code_id', $request->id)->first();
         $model->status = 2;
         $model->save();
+
+        GiftCode::find($request->id)->update(['status' => 3]);
     }
     public function create(Request $request)    { 
         
