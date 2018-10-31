@@ -18,32 +18,32 @@
                     <ul>
                         <li>
                             <img src="{{ URL::asset('assets/images/ct_line.png') }}" alt="line">
-                            <span>ID: cobelily / +63 927 805 2221</span>
+                            <span>{!! $settingArr['line'] !!}</span>
                         </li>
                         <li>
-                            <img src="{{ URL::asset('assets/images/ct_id.png') }}" alt="ct_id">
-                            <span>ID: kcardcenter / +63 927 805 2221</span>
+                            <img src="{{ URL::asset('assets/images/ct_id.png') }}" alt="wechat">
+                            <span>{!! $settingArr['wechat'] !!}</span>
                         </li>
                         <li>
-                            <img src="{{ URL::asset('assets/images/ct_phone.png') }}" alt="phone">
-                            <span>+63 927 805 2221</span>
+                            <img src="{{ URL::asset('assets/images/ct_phone.png') }}" alt="whatsapp">
+                            <span>{!! $settingArr['whatsapp'] !!}</span>
                         </li>
                     </ul>
                     <ul>
                         
                         <li>
                             <img src="{{ URL::asset('assets/images/ct_viber.png') }}" alt="Viber">
-                            <span>+63 927 805 2221</span>
+                            <span>{!! $settingArr['viber'] !!}</span>
                         </li>
                         <li>
                             <img src="{{ URL::asset('assets/images/ct_zalo.png') }}" alt="Zalo">
-                            <span>+63 927 805 2221</span>
+                            <span>{!! $settingArr['zalo'] !!}</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <a href="https://zalo.me/g/ntxbmu208" title="Zalo Lily Nguyễn" class="kl_girl" target="_blank">
+        <a href="{!! $settingArr['zalo_group'] !!}" title="Zalo Lily Nguyễn" class="kl_girl" target="_blank">
             <img src="{{ URL::asset('assets/images/lily.png') }}" alt="Zalo Lily Nguyễn">
         </a>
     </div>

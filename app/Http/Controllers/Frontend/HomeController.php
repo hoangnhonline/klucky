@@ -35,8 +35,7 @@ class HomeController extends Controller
         $seo = $settingArr;
         $seo['title'] = $settingArr['site_title'];
         $seo['description'] = $settingArr['site_description'];        
-        $socialImage = $settingArr['banner'];
-        
+               
         return view('frontend.home.index', compact(
                                 'seo'
                                 ));
