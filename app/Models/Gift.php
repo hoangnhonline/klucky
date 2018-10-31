@@ -26,8 +26,9 @@ class Gift extends Model  {
     protected $fillable = [
                             'name', 
                             'slug',                            
-                            'amount',
+                            'star',
                             'image_url',
+                            'popup_image_url',
                             'display_order',
                             'status',                   
                             'created_user', 

@@ -1,6 +1,10 @@
 (function($){
     "use strict";
-
+    $.ajaxSetup({
+      headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
@@ -119,7 +123,7 @@
                 if(data.success == 0){
                     $('#wrongModal').modal('show');
                 }else if(data.success == 1){                    
-                    $('#success_image').attr('src', data.image_url);
+                    $('#success_image').attr('src', data.popup_image_url);
                     $('#success_image').attr('alt', data.name);
                     $('#success_code').html(data.code);
                     $('#successModal').modal('show');
@@ -135,5 +139,32 @@
      });
      $('#btnNhanSo').click(function(){
         $('#infoModal').modal('show');
+     });
+     $('#btnSend').click(function(){
+        var error = 0;
+        $('#contactForm input.required, #contactForm select.required').each(function(){
+          if($.trim($(this).val()) == ""){
+            error++;
+          }
+
+        });        
+        if(error > 0){
+          return false;
+        }else{          
+          $.ajax({
+            url : $('#contactForm').attr('action'),
+            type : 'POST',
+            data : $('#contactForm').serialize(),
+            dataType : 'json',
+            success : function(data){
+              $('.modal').modal('hide');
+              $('#sendSuccessModal').modal('show');
+            }
+          });
+        }
+     });
+     $('#btnNewNumber').click(function(){
+      $('.modal').modal('hide');
+      $('#infoModal').modal('show');
      });
 })(jQuery); // End of use strict

@@ -9,6 +9,7 @@ use App\Models\ArticlesCate;
 use App\Models\Settings;
 use App\Models\Gift;
 use App\Models\GiftCode;
+use App\Models\Contact;
 
 
 use Helper, File, Session, Auth, Hash, Mail;
@@ -94,7 +95,7 @@ class HomeController extends Controller
         
         $rs = GiftCode::where('code', $code)->where('gift_code.status', 1)
                 ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
-                ->select('image_url', 'name', 'code', 'gift_id')
+                ->select('popup_image_url', 'name', 'code', 'gift_id')
                 ->first();
         if(!$rs){
             return json_encode(['success' => 0]);
@@ -108,6 +109,10 @@ class HomeController extends Controller
             return json_encode($arr);
         }
         
+    }
+    public function sendContact(Request $request){
+        $dataArr = $request->all();
+        Contact::create($dataArr);        
     }
 
 }
