@@ -41,7 +41,7 @@
               @endif                
               <input type="hidden" name="id" value="{{ $detail->id }}">
                 <div class="form-group">
-                  <label for="email">Tên truy cập <span class="red-star">*</span></label>
+                  <label for="email">Tên truy cập </label>
                   <input type="text" name="username" id="username" value="{{ old('username', $detail->username) }}" class="form-control">
                 </div> 
                 <div class="form-group">
@@ -57,7 +57,7 @@
                   <input type="text" name="cmnd" id="cmnd" value="{{ old('cmnd', $detail->cmnd) }}" class="form-control">
                 </div> 
                 <div class="form-group">
-                  <label for="email">Cách Quy Đổi <span class="red-star">*</span></label>
+                  <label for="email">Cách Quy Đổi </label>
                   <select class="form-control" name="type" id="type">
                     <option value="">-- chọn --</option>
                     <option value="1" {{ old('type', $detail->type) == 1 ? "selected" : "" }}>Quy Đổi Tiền Gửi</option>
