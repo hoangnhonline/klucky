@@ -8,19 +8,19 @@
     <div class="kl_slider">
         <div class="kl_autoplay kl_autoplay_style">
             @foreach($giftList as $gift)
+            @if($gift->top == 1)
             <div class="kl_slide_item">
                 <div class="kl_slide_item_ct">
                     <div class="kl_starGift">
+                        @for($i = 0; $i<$gift->star; $i++)
                         <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        @endfor
                     </div>
                     <img src="{{ Helper::showImage($gift->image_url) }}" class="kl_imgGift" alt="{!! $gift->name !!}">
                     <p class="kl_nameGift">{!! $gift->name !!}</p>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>
@@ -36,7 +36,7 @@
             <div class="col-md-4 kl_Giftitem">
                 <div class="kl_itemGift mb-2">
                     <div class="kl_ctGift">
-                        <span class="kl_amountGift">Vẫn còn : {{ number_format($countCode[$gift->id]) }}</span>
+                        <span class="kl_amountGift">Vẫn còn : {{ number_format($gift->amount) }}</span>
                         <img src="{{ Helper::showImage($gift->image_url) }}" class="kl_imgGift" alt="{!! $gift->name !!}">
                         <p class="kl_nameGift">{!! $gift->name !!}</p>
                     </div>
