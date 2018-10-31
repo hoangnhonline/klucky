@@ -66,23 +66,12 @@
        
       </li>
       
-      <!-- <li class="treeview {{ in_array(\Request::route()->getName(), ['loai-thuoc-tinh.index', 'thuoc-tinh.index', 'color.index']) ? 'active' : '' }}">
-        <a href="#">
+     <li class="{{ in_array(\Request::route()->getName(), ['settings.index']) ? 'active' : '' }}">
+        <a href="{{ route('settings.index') }}">
           <i class="fa  fa-gears"></i>
           <span>Cài đặt</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
         </a>
-        <ul class="treeview-menu">
-               
-          <li {{ \Request::route()->getName() == "account.index" ? "class=active" : "" }}><a href="{{ route('account.index') }}"><i class="fa fa-circle-o"></i> Users</a></li>          
-        </ul>
-      </li> -->
-      <!--<li class="header">LABELS</li>
-      <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
+      </li>
     </ul>
   </section>
   <!-- /.sidebar -->

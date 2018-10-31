@@ -35,8 +35,7 @@ class HomeController extends Controller
         $seo = $settingArr;
         $seo['title'] = $settingArr['site_title'];
         $seo['description'] = $settingArr['site_description'];        
-        $socialImage = $settingArr['banner'];
-        
+               
         return view('frontend.home.index', compact(
                                 'seo'
                                 ));
@@ -44,7 +43,7 @@ class HomeController extends Controller
 
     public function coCauGiai(){
         
-        $giftList = Gift::orderBy('id', 'asc')->get();
+        $giftList = Gift::where('id', '<>', 999)->orderBy('id', 'asc')->get();
         $countCode = [];
         foreach($giftList as $gift){
             $countCode[$gift->id] = GiftCode::where('status', 1)->where('gift_id', $gift->id)->count();

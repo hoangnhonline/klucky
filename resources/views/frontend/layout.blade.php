@@ -15,14 +15,13 @@
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:description" content="@yield('site_description')" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:site_name" content="quaysodoithuong.com" />
-    <?php $socialImage = isset($socialImage) ? $socialImage : $settingArr['banner']; ?>
-    <meta property="og:image" content="{{ Helper::showImage($socialImage) }}" />
+    <meta property="og:site_name" content="quaysodoithuong.com" />    
+    <meta property="og:image" content="https://quaysodoithuong.com/assets/images/Logo.png" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="@yield('site_description')" />
     <meta name="twitter:title" content="@yield('title')" />
-    <meta name="twitter:image" content="{{ Helper::showImage($socialImage) }}" />
+    <meta name="twitter:image" content="https://quaysodoithuong.com/assets/images/Logo.png" />
     <meta name="robots" content="index,follow" />
     <link rel="icon" href="{{ URL::asset('assets/favicon.ico') }}" type="image/x-icon">  
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
@@ -35,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+    {!! $settingArr['google_analystic'] !!}
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
@@ -72,7 +71,7 @@
                             <img src="{{ URL::asset('assets/images/line.png') }}" alt="Line">
                         </div>
                         <p class="text-center">
-                            <a href="https://zalo.me/g/ntxbmu208" target="_blank" class="kl_btn mt-5">
+                            <a href="{!! $settingArr['zalo_group'] !!}" target="_blank" class="kl_btn mt-5">
                                 <span>LIÊN HỆ LILY</span>
                             </a>
                         </p>
@@ -162,10 +161,10 @@
                             <div class="kl_register">
                                 <p class="text-center kl_text_while">Bạn chưa có tên truy cập hoặc mã giao dịch ?</p>
                                 <div class="btn-group">
-                                    <a href="https://www.facebook.com/messages/requests/t/1966108620112100" class="kl_btn mr-3" target="_blank">
+                                    <a href="{!! $settingArr['facebook_messenger'] !!}" class="kl_btn mr-3" target="_blank">
                                         <span>CLICK NGAY</span>
                                     </a>
-                                    <a href="https://zalo.me/g/ntxbmu208" class="kl_btn" target="_blank">
+                                    <a href="{!! $settingArr['zalo_group'] !!}" class="kl_btn" target="_blank">
                                         <span>LIÊN HỆ LILY</span>
                                     </a>
                                 </div>
@@ -188,7 +187,7 @@
                             Cơ Hội Vẫn Còn !
                         </p>
                         <div class="kl_modal_video">
-                            <img src="{{ URL::asset('assets/images/video.png') }}" alt="video">
+                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}" frameborder="0" allowfullscreen id="load_video"></iframe>
                         </div>
                         <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
                         <p class="text-center">
@@ -219,7 +218,7 @@
                         <span class="kl_text_yellow" id="success_code"></span>
                     </p>
                     <p class="text-center">
-                        <a href="https://zalo.me/g/ntxbmu208" target="_blank" class="kl_btn">
+                        <a href="{!! $settingArr['zalo_group'] !!}" target="_blank" class="kl_btn">
                             <span>Nhận thưởng</span>
                         </a>
                     </p>
@@ -248,7 +247,7 @@
                     </p>
                     <p class="kl_modal_title text-center kl_modal_title_size mb-4">Hoặc liên hệ với Lily Nguyen</p>
                     <p class="text-center">
-                        <a href="https://zalo.me/g/ntxbmu208" title="Hỗ trợ nhanh" target="_blank" class="kl_btn">
+                        <a href="{!! $settingArr['zalo_group'] !!}" title="Hỗ trợ nhanh" target="_blank" class="kl_btn">
                             <span>Hỗ Trợ Nhanh</span>
                         </a>
                     </p>

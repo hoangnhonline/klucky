@@ -20,7 +20,7 @@ class GiftController extends Controller
     public function index(Request $request)
     {
 
-        $query = Gift::whereRaw('1');
+        $query = Gift::where('id', '<>', 999);
 
         $items = $query->orderBy('display_order')->paginate(100);
         
