@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="{{ URL::asset('admin/plugins/iCheck/flat/blue.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('admin/dist/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('admin/dist/css/sweetalert2.min.css') }}">  
-
+  <link rel="icon" href="{{ URL::asset('assets/favicon.ico') }}" type="image/x-icon"> 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
