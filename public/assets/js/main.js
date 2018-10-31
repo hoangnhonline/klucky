@@ -140,11 +140,13 @@
         $('#code').val('');
         $('.number-list span.number').html(0);
      });
-     $(document).on('click', '#btnNhanSo', function(){
+     $(document).on('click', '#btnNhanSo, a.btnNhanSo', function(){
+      $('.modal').modal('hide');
       $('#infoModal').modal('show');
      });    
-     $(document).on('click', 'a.btnNhanSo', function(){
-      $('#infoModal').modal('show');
+     $(document).on('click', 'a.btnConfirm', function(){
+      $('.modal').modal('hide');
+      $('#confirmModal').modal('show');
      });     
      $('#btnSend').click(function(){
         var error = 0;

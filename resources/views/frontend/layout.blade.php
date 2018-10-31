@@ -233,6 +233,34 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+            <div class="modal-content kl_modal_content kl_modal_getNumber">
+                <div class="kl_btn_close_modal">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="kl_modal_title text-center kl_modal_title_size mb-4">Quý Khách đã có số may mắn</p>
+                    <p class="text-center">
+                        <a href="{{ route('home') }}" title="Quay ngay" class="kl_btn">
+                            <span>Quay ngay</span>
+                        </a>
+                    </p>
+                    <p class="line mt-4 mb-5">
+                        <img src="{{ URL::asset('assets/images/line.png') }}" alt="line">
+                    </p>
+                    <p class="kl_modal_title text-center kl_modal_title_size mb-4">Hoặc nhận số may mắn tại đây</p>
+                    <p class="text-center">
+                        <a href="javascript:void(0)" title="Nhận ngay" class="kl_btn btnNhanSo">
+                            <span>Nhận ngay</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="wrongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
             <div class="modal-content kl_modal_content kl_modal_getNumber">
@@ -245,7 +273,7 @@
                     <p class="kl_modal_title text-center kl_modal_title_size mb-4">Số Quý Khách đã nhập không đúng <br>Vui lòng kiểm tra tại đây</p>
                     <p class="text-center">
                         <a href="{{ route('huong-dan') }}" title="Kiểm tra ngay" class="kl_btn">
-                            <span>Kiểm tra Ngay</span>
+                            <span>Kiểm tra ngay</span>
                         </a>
                     </p>
                     <p class="line mt-4 mb-5">

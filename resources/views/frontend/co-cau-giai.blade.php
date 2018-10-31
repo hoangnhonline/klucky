@@ -43,7 +43,7 @@
                     <div class="kl_btn_gr">
                         <div class="kl_table">
                             <div class="kl_tablecell text-center">
-                                <a href="javascript:void(0)" class="kl_btn_item btnNhanSo" title="{!! $gift->name !!}">
+                                <a href="javascript:void(0)" class="kl_btn_item btnConfirm" title="{!! $gift->name !!}">
                                     <span>Nhận ngay!</span>
                                 </a>
                             </div>
