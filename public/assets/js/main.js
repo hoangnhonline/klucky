@@ -142,6 +142,9 @@
      });
      $(document).on('click', '#btnNhanSo', function(){
       $('#infoModal').modal('show');
+     });    
+     $(document).on('click', 'a.btnNhanSo', function(){
+      $('#infoModal').modal('show');
      });     
      $('#btnSend').click(function(){
         var error = 0;
