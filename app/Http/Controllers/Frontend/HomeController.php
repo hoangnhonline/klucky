@@ -112,11 +112,9 @@ class HomeController extends Controller
         
     }
     public function sendContact(Request $request){
-        $dataArr = $request->all();
-       // dd($dataArr);
+        $dataArr = $request->all();       
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
-        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));
-        dd($dataArr);
+        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));        
         Contact::create($dataArr);   
         return json_encode(['success' => 1]);     
     }
