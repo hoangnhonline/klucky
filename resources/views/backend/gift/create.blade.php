@@ -44,6 +44,11 @@
                   <label>Tên quà<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
+                <div class="form-group" >
+                  
+                  <label>Số lượng còn lại<span class="red-star">*</span></label>
+                  <input type="text" class="form-control" name="amount" id="amount" value="{{ old('amount') }}">
+                </div>
                 <div class="form-group">
                   <div class="checkbox">
                     <label>

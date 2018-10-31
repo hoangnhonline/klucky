@@ -84,6 +84,7 @@ class HomeController extends Controller
         $id = $request->id ? $request->id : null;
         if($id){
             $content = Articles::find($id)->toArray();
+            $content['title'] = strip_tags($content['title']);
             return json_encode($content);
         }
         

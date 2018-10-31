@@ -31,7 +31,8 @@ class Gift extends Model  {
                             'popup_image_url',
                             'display_order',
                             'status',   
-                            'top',                
+                            'top',  
+                            'amount'              
                             'created_user', 
                             'updated_user'
                         ];

@@ -16,7 +16,7 @@
             <div class="kl_site_menu_mobile">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="title-page">{!! $contentList->first()->title !!}</span>
+                        <span class="title-page">{!! strip_tags($contentList->first()->title) !!}</span>
                         <span class="arrow">
                             <img src="{{ URL::asset('assets/images/arrow-down.png') }}" alt="">
                         </span>
