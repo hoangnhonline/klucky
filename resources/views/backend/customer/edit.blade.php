@@ -84,7 +84,9 @@
                       @endif
                       @if( $tmpArr->count() > 0)
                         @foreach( $tmpArr as $value )
+                        @if($value->status ==1)
                         <option value="{{ $value->id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}</option>
+                        @endif
                         @endforeach                        
                       @endif
 
