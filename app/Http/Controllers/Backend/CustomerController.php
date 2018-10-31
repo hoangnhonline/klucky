@@ -107,7 +107,7 @@ class CustomerController extends Controller
         }
         Session::flash('message', 'Cập nhật thành công');        
 
-        return redirect()->route('customer.index');
+        return redirect()->route('customer.edit', ['id' => $dataArr['id']]);
     }
     public function index(Request $request)
     {

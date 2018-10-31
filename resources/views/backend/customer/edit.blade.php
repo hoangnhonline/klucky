@@ -30,6 +30,9 @@
             {!! csrf_field() !!}
 
             <div class="box-body">
+               @if(Session::has('message'))
+      <p class="alert alert-info" >{{ Session::get('message') }}</p>
+      @endif
               @if (count($errors) > 0)
                   <div class="alert alert-danger">
                       <ul>
