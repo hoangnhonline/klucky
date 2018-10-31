@@ -181,7 +181,9 @@ class CustomerController extends Controller
         $codeSelected = [];
 
         $detail = Customer::find($id);
-        $tmpArr = CustomerCode::where(['customer_id' => $id])->join('gift_code', 'gift_code.id', '=', 'customer_code.code_id')->join('gift', 'gift.id', '=', 'gift_code.gift_id')->get();
+        $tmpArr = CustomerCode::where(['customer_id' => $id])->join('gift_code', 'gift_code.id', '=', 'customer_code.code_id')->join('gift', 'gift.id', '=', 'gift_code.gift_id')
+            ->select('customer_code.status', 'gift_id', 'code_id', 'gift.name', 'gift_code.code')
+        ->get();
         if( $tmpArr->count() > 0 ){
             foreach ($tmpArr as $value) {
                 $codeSelected[] = $value->code_id;
