@@ -5,6 +5,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $('.datepicker').datepicker();
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
