@@ -132,6 +132,12 @@
                   </tr>
                   @endforeach    
 
+                @else
+                <tr>
+                  <td colspan="4">
+                    Chưa có số!
+                  </td>
+                </tr>
                 @endif
               </table>
             
