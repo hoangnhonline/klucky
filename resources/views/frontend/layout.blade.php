@@ -149,9 +149,9 @@
                                     <label class="col-sm-4 col-form-label kl_form_name"></label>
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="text-center">
-                                            <a href="javascript:void(0)" id="btnSend" class="kl_btn">
+                                            <button type="button" id="btnSend" class="kl_btn">
                                                 <span>GỬI ĐI</span>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
