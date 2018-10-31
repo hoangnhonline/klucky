@@ -142,10 +142,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline row">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="false">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="false">
                                             </div>
                                         </div>
                                     </div>
