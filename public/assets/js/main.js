@@ -148,9 +148,10 @@
           }
 
         });
+        console.log(error);
         if(error > 0){
           return false;
-        }else{
+        }else{          
           $.ajax({
             url : $('#contactForm').attr('action'),
             type : 'POST',
@@ -161,5 +162,9 @@
             }
           });
         }
+     });
+     $('#btnNewNumber').click(function(){
+      $('.modal').modal('hide');
+      $('#infoModal').modal('show');
      });
 })(jQuery); // End of use strict

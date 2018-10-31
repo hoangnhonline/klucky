@@ -70,30 +70,28 @@
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="" name="username" >
+                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input required" id="phone" placeholder="" name="phone">
+                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="12" placeholder="Vui lòng nhập thông tin liên hệ..." name="phone">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="Email" class="form-control kl_form_input required" id="email" placeholder="" name="email">
+                                        <input type="Email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email..." name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
                                         <select class="form-control kl_form_input required" id="type" name="type">
-                                            <option value=""></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                            <option value="">Vui lòng chọn 1...</option>
+                                            <option value="1">Quy Đổi Tiền Gửi</option>
+                                            <option value="2">Quy Đổi Tiền Thua Cược</option>
                                         </select>
                                     </div>
                                 </div>
@@ -136,10 +134,10 @@
                             <div class="kl_register">
                                 <p class="text-center kl_text_while">Bạn chưa có tên truy cập hoặc mã giao dịch ?</p>
                                 <div class="btn-group">
-                                    <a href="#" class="kl_btn mr-3">
+                                    <a href="https://www.facebook.com/messages/requests/t/1966108620112100" class="kl_btn mr-3" target="_blank">
                                         <span>CLICK NGAY</span>
                                     </a>
-                                    <a href="#" class="kl_btn">
+                                    <a href="https://zalo.me/g/ntxbmu208" class="kl_btn" target="_blank">
                                         <span>LIÊN HỆ LILY</span>
                                     </a>
                                 </div>
@@ -166,7 +164,7 @@
                         </div>
                         <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
                         <p class="text-center">
-                            <a href="#" class="kl_btn">
+                            <a href="javascript:void(0)" id="btnNewNumber" class="kl_btn">
                                 <span>Nhận Thêm Số </span>
                             </a>
                         </p>

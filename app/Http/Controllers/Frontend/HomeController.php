@@ -110,7 +110,7 @@ class HomeController extends Controller
         
     }
     public function sendContact(Request $request){
-        dd($request);
+        dd($request->input());
     }
 
 }
