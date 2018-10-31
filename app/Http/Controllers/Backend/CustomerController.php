@@ -33,19 +33,13 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $dataArr = $request->all();        
-        $this->validate($request,[                                    
-            'username' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'type' => 'required',
+        $this->validate($request,[                                                
+            'email' => 'required_without:phone',
+            'phone' => 'required_without:email',           
             'date_from' => 'required',          
             'date_to' => 'required',            
         ],
-        [   
-            'username.required' => 'Bạn chưa nhập tên đăng nhập',                                 
-            'email.required' => 'Bạn chưa nhập số điện thoại',                                 
-            'phone.required' => 'Bạn chưa nhập email',                                 
-            'type.required' => 'Bạn chưa chọn cách quy đổi',                                 
+        [                        
             'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
             'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
             
@@ -73,19 +67,13 @@ class CustomerController extends Controller
     public function update(Request $request)
     {
         $dataArr = $request->all();
-        $this->validate($request,[                                    
-            'username' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'type' => 'required',
+        $this->validate($request,[                                                
+             'email' => 'required_without:phone',
+            'phone' => 'required_without:email',              
             'date_from' => 'required',          
             'date_to' => 'required',            
         ],
-        [   
-            'username.required' => 'Bạn chưa nhập tên đăng nhập',                                 
-            'email.required' => 'Bạn chưa nhập số điện thoại',                                 
-            'phone.required' => 'Bạn chưa nhập email',                                 
-            'type.required' => 'Bạn chưa chọn cách quy đổi',                                 
+        [                        
             'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
             'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
             
