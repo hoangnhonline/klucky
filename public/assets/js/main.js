@@ -9,7 +9,18 @@
       dateFormat: 'mm/dd/yy'
     });
     $('#phone').blur(function(){
-      var obj = $(this);
+      checkPhone($(this));
+    });
+    
+    $('#email').blur(function(){    
+      checkEmail($(this));
+    });
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    function checkPhone(obj){
       var mobile = obj.val();
       var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
      
@@ -23,25 +34,20 @@
       }else{
         obj.prev().html('Vui lòng nhập số điện thoại.').show();
       }
-    });
-    
-    $('#email').blur(function(){
-      var obj = $(this);
+    }
+    function checkEmail(obj){
       if(obj.val() == ""){
         obj.prev().html('Vui lòng nhập địa chỉ email.').show();
+        return false;
       }
       if(!validateEmail(obj.val())){
         obj.prev().html('Địa chỉ email không hợp lệ.').show();
+        return false;
       }else{
         obj.prev().hide();
+        return true;
       }
-    });
-    function validateEmail(email) 
-    {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
     }
-
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
@@ -187,9 +193,18 @@
         $('#contactForm input.required, #contactForm select.required').each(function(){
           if($.trim($(this).val()) == ""){
             error++;
+            $(this).prev().show();
+          }else{
+            $(this).prev().hide();
           }
 
-        });        
+        });
+        if(!checkEmail($('#email'))){
+          error++;
+        }
+        if(!checkPhone($('#phone'))){
+          error++;
+        }
         if(error > 0){
           return false;
         }else{     

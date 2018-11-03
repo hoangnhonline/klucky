@@ -106,14 +106,15 @@
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" >
+                                        <label class="required">Vui lòng nhập tên truy cập</label>
+                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        
-                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="10" placeholder="Vui lòng nhập thông tin liên hệ..." name="phone" autocomplete="false">
+                                        <label class="required">Vui lòng nhập số điện thoại</label>
+                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="10" placeholder="Vui lòng nhập số điện thoại..." name="phone" autocomplete="off">
                                         <label class="required">Số điện thoại không hợp lệ.</label>
                                     </div>
                                 </div>
@@ -121,7 +122,7 @@
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
                                         <label class="required">Email không hợp lệ.</label>
-                                        <input type="email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email..." name="email">
+                                        <input type="email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email" name="email" autocomplete="off">
                                         
                                     </div>
                                 </div>
@@ -149,10 +150,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline row">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="false">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="false">
+                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
