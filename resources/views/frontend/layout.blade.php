@@ -197,7 +197,7 @@
                         </div>
                         <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
                         <p class="text-center">
-                            <a href="javascript:void(0)" id="btnNewNumber" class="kl_btn">
+                            <a href="https://www.facebook.com/messages/requests/t/1966108620112100" target="_blank" class="kl_btn">
                                 <span>Nhận Thêm Số </span>
                             </a>
                         </p>
