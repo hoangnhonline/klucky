@@ -8,6 +8,40 @@
     $('.datepicker').datepicker({     
       dateFormat: 'mm/dd/yy'
     });
+    $('#phone').blur(function(){
+      var obj = $(this);
+      var mobile = obj.val();
+      var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+     
+      if(mobile !==''){
+        if (vnf_regex.test(mobile) == false) 
+        {
+          obj.prev().html('Số điện thoại không hợp lệ.').show();
+        }else{
+          obj.prev().hide();
+        }
+      }else{
+        obj.prev().html('Vui lòng nhập số điện thoại.').show();
+      }
+    });
+    
+    $('#email').blur(function(){
+      var obj = $(this);
+      if(obj.val() == ""){
+        obj.prev().html('Vui lòng nhập địa chỉ email.').show();
+      }
+      if(!validateEmail(obj.val())){
+        obj.prev().html('Địa chỉ email không hợp lệ.').show();
+      }else{
+        obj.prev().hide();
+      }
+    });
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {

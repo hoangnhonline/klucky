@@ -38,8 +38,9 @@
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
-    
+    @if($routeName != "co-cau-giai")
     <div id="Zoom">
+    @endif
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @if($routeName != "home")
             <div class="wrapper2">
@@ -51,8 +52,10 @@
             @endif
             <!-- #lucky-wrap -->
         </div>
+    @if($routeName != "co-cau-giai")
         <!-- #Zoom -->
     </div>
+    @endif
 
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
@@ -109,13 +112,17 @@
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="12" placeholder="Vui lòng nhập thông tin liên hệ..." name="phone">
+                                        
+                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="10" placeholder="Vui lòng nhập thông tin liên hệ..." name="phone" autocomplete="false">
+                                        <label class="required">Số điện thoại không hợp lệ.</label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <input type="Email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email..." name="email">
+                                        <label class="required">Email không hợp lệ.</label>
+                                        <input type="email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email..." name="email">
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group row">
