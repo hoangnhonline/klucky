@@ -93,7 +93,7 @@ class HomeController extends Controller
     public function checkNo(Request $request){
         $code = $request->code ? $request->code : null;
         
-        $rs = GiftCode::where('code', $code)->where('gift_code.status', 1)
+        $rs = GiftCode::where('code', $code)->whereIn('gift_code.status', [1, 2])
                 ->join('gift', 'gift.id', '=', 'gift_code.gift_id')
                 ->select('popup_image_url', 'name', 'code', 'gift_id')
                 ->first();
@@ -111,7 +111,7 @@ class HomeController extends Controller
         }
         
     }
-    public function sendCustomer(Request $request){
+    public function sendContact(Request $request){
         $dataArr = $request->all();       
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));        

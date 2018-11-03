@@ -16,30 +16,12 @@
                 <p><span>Hoặc liên hệ ngay hỗ trợ trực tuyến tại đây.</span></p>
                 <div class="kl_contactNow_ct">
                     <ul>
-                        <li>
-                            <img src="{{ URL::asset('assets/images/ct_line.png') }}" alt="line">
-                            <span>{!! $settingArr['line'] !!}</span>
-                        </li>
-                        <li>
-                            <img src="{{ URL::asset('assets/images/ct_id.png') }}" alt="wechat">
-                            <span>{!! $settingArr['wechat'] !!}</span>
-                        </li>
-                        <li>
-                            <img src="{{ URL::asset('assets/images/ct_phone.png') }}" alt="whatsapp">
-                            <span>{!! $settingArr['whatsapp'] !!}</span>
-                        </li>
-                    </ul>
-                    <ul>
-                        
-                        <li>
-                            <img src="{{ URL::asset('assets/images/ct_viber.png') }}" alt="Viber">
-                            <span>{!! $settingArr['viber'] !!}</span>
-                        </li>
-                        <li>
+                       <li>
                             <img src="{{ URL::asset('assets/images/ct_zalo.png') }}" alt="Zalo">
                             <span>{!! $settingArr['zalo'] !!}</span>
                         </li>
-                    </ul>
+                       
+                    </ul>                    
                 </div>
             </div>
         </div>
