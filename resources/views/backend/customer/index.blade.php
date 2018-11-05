@@ -108,7 +108,7 @@
                   @endif
                 </td>
                 <td>
-                  @if($item->date_from != '0000-00-00 00:00:00' && $item->date_from != null)
+                  @if($item->date_from != '0000-00-00 00:00:00' && $item->date_from != null && $item->from_date != '1970-01-01 08:00:00')
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
                   @endif
                 </td>
