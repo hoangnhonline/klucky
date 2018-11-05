@@ -73,7 +73,7 @@
                             Chúng tôi nhận được thông tin thành công<br>Ban Tổ Chức sẽ liên hệ lại Quý Khách<br>Trong thời gian không quá 24 giờ.
                         </p>
                         <div class="kl_modal_video">
-                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}" frameborder="0" allowfullscreen id="load_video"></iframe>
+                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0&autoplay=1" frameborder="0" allowfullscreen id="load_video" allow='autoplay'></iframe>
                         </div>
                         <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
                          <div class="line">
@@ -206,7 +206,7 @@
                             Cơ Hội Vẫn Còn !
                         </p>
                         <div class="kl_modal_video">
-                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}" frameborder="0" allowfullscreen id="load_video"></iframe>
+                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&autoplay=1" frameborder="0" allowfullscreen id="load_video" allow='autoplay'></iframe>
                         </div>
                         <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
                         <p class="text-center">
