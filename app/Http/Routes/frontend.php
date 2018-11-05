@@ -13,6 +13,7 @@
 
 Route::group(['namespace' => 'Frontend'], function()
 {
+	Route::get('/view', ['as' => 'view', 'uses' => 'HomeController@view']);
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('/co-cau-giai.html', ['as' => 'co-cau-giai', 'uses' => 'HomeController@coCauGiai']);
     Route::get('/the-le.html', ['as' => 'the-le', 'uses' => 'HomeController@theLe']);

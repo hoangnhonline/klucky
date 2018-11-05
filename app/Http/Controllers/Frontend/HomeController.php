@@ -11,7 +11,7 @@ use App\Models\Gift;
 use App\Models\GiftCode;
 use App\Models\Customer;
 
-
+use Response;
 use Helper, File, Session, Auth, Hash, Mail;
 
 class HomeController extends Controller
@@ -21,6 +21,29 @@ class HomeController extends Controller
 
     public function __construct(){        
        
+    }
+    public function view()
+    {
+        $file = public_path().'/test.pdf';
+        
+        if (File::isFile($file))
+        {
+            $file = File::get($file);
+
+            $response = Response::make($file, 200);
+            $content_types = [
+                'application/octet-stream', // txt etc
+                'application/msword', // doc
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document', //docx
+                'application/vnd.ms-excel', // xls
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // xlsx
+                'application/pdf', // pdf
+            ];
+            // using this will allow you to do some checks on it (if pdf/docx/doc/xls/xlsx)
+            $response->header('Content-Type', $content_types);
+
+            return $response;
+        }
     }
     /**
     * Display a listing of the resource.
