@@ -28,11 +28,14 @@
         if (vnf_regex.test(mobile) == false) 
         {
           obj.next().html('Số điện thoại không hợp lệ.').show();
+          return false;
         }else{
           obj.next().hide();
+          return true;
         }
       }else{
         obj.next().html('Vui lòng nhập số điện thoại.').show();
+        return false;
       }
     }
     function checkEmail(obj){
@@ -198,16 +201,16 @@
             $(this).next().hide();
           }
 
-        });
+        });        
         if(!checkEmail($('#email'))){
           error++;
         }
         if(!checkPhone($('#phone'))){
           error++;
-        }
+        }        
         if(error > 0){
           return false;
-        }else{     
+        }else{              
           $('#btnSend').attr('disabled','disabled');     
           $.ajax({
             url : $('#contactForm').attr('action'),
