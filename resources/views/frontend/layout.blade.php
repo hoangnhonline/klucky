@@ -43,7 +43,7 @@
     @endif
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @if($routeName != "home")
-            <div class="wrapper2">
+            <div class="wrapper2 @if($routeName == "co-cau-giai") wrapper_kl_rewards @endif">
             @endif
             @include('frontend.partials.header')            
             @yield('content')   
@@ -105,31 +105,29 @@
                                 {{ csrf_field() }}
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
-                                    <div class="col-sm-8 kl_form_field">
+                                    <div class="col-sm-8 kl_form_field">  
+                                        <input type="text" class="form-control kl_form_input requireds" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" autocomplete="off">
                                         <label class="required">Vui lòng nhập tên truy cập</label>
-                                        <input type="text" class="form-control kl_form_input required" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
-                                    <div class="col-sm-8 kl_form_field">
-                                        <label class="required">Vui lòng nhập số điện thoại</label>
-                                        <input type="text" class="form-control kl_form_input required number" id="phone" maxlength="10" placeholder="Vui lòng nhập số điện thoại..." name="phone" autocomplete="off">
-                                        <label class="required">Số điện thoại không hợp lệ.</label>
+                                    <div class="col-sm-8 kl_form_field"> 
+                                        <input type="text" class="form-control kl_form_input requireds number" id="phone" maxlength="10" placeholder="Vui lòng nhập số điện thoại..." name="phone" autocomplete="off"><label class="required">Vui lòng nhập số điện thoại</label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <label class="required">Email không hợp lệ.</label>
-                                        <input type="email" class="form-control kl_form_input required" id="email" placeholder="Vui lòng nhập địa chỉ email" name="email" autocomplete="off">
                                         
+                                        <input type="email" class="form-control kl_form_input requireds" id="email" placeholder="Vui lòng nhập địa chỉ email" name="email" autocomplete="off">
+                                        <label class="required">Email không hợp lệ.</label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <select class="form-control kl_form_input required" id="type" name="type">
+                                        <select class="form-control kl_form_input requireds" id="type" name="type">
                                             <option value="">Vui lòng chọn 1...</option>
                                             <option value="1">Quy Đổi Tiền Gửi</option>
                                             <option value="2">Quy Đổi Tiền Thua Cược</option>
@@ -150,10 +148,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline row">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
+                                                <input type="text" class="form-control kl_form_input requireds datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input required datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
+                                                <input type="text" class="form-control kl_form_input requireds datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>

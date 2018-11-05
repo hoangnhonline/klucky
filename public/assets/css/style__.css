@@ -342,18 +342,14 @@ h1, h2, h3, h4, h5, h6, p {
 .kl_formInformation {
     padding: 0 140px;
 }
-.kl_formInformation .required {
+.kl_formInformation .rerequired {
     color: #ffffff;
     background-color: transparent;
     border-color: transparent;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    display: block;
-    text-align: left;
 }
 .kl_formInformation .form-group {
     margin-bottom: 10px;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 .kl_formInformation .kl_form_name {
     font-size: 18px;
@@ -1331,9 +1327,6 @@ h1, h2, h3, h4, h5, h6, p {
     .kl_modal {
         max-width: 950px;
     }
-    .kl_main_contact {
-        min-height: 800px;
-    }
 }
 @media (max-width: 767px) and (min-width: 577px) {
     .kl_modal {
@@ -1777,10 +1770,8 @@ h1, h2, h3, h4, h5, h6, p {
 	    width: 100%;
 	}
 }
-.kl_formInformation label.required{
-    display: none;
-}
-/*.lucky-wrap .randomizer-wrap .random-input span {
+
+.lucky-wrap .randomizer-wrap .random-input span {
     position: relative;
 }
 .lucky-wrap .randomizer-wrap .random-input span:before {
@@ -1790,10 +1781,10 @@ h1, h2, h3, h4, h5, h6, p {
     top: 0;
     left: 0;
     display: none;
-    -webkit-animation: lefttoright 5s infinite;
+    /*-webkit-animation: lefttoright 5s infinite;
     -webkit-animation-timing-function: linear;
     animation: lefttoright 5s infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear;*/
     
 }
 .lucky-wrap .randomizer-wrap .random-input span:after {
@@ -1825,4 +1816,7 @@ h1, h2, h3, h4, h5, h6, p {
 @keyframes righttoleft {
     from {right: 0px;}
     to {right: 600px;}
-}*/
+}
+.kl_form_field label.required{
+    display: none;
+}
