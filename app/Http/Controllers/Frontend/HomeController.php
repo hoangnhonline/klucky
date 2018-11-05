@@ -116,6 +116,8 @@ class HomeController extends Controller
         if($dataArr['date_from'] && $dataArr['date_to']){    
             $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
             $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));        
+        }else{
+            $dataArr['date_from'] = $dataArr['date_to'] = null;
         }
         Customer::create($dataArr);   
         return json_encode(['success' => 1]);     

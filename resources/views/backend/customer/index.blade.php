@@ -108,7 +108,9 @@
                   @endif
                 </td>
                 <td>
+                  @if($item->date_from != '0000-00-00 00:00:00' && $item->date_from != null)
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
+                  @endif
                 </td>
                 <td style="white-space:nowrap">{{ date('d-m-Y H:i', strtotime($item->created_at)) }}</td>
                 <td style="white-space:nowrap;text-align: right;">   
