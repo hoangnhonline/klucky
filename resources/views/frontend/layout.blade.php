@@ -38,9 +38,9 @@
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
-    @if($routeName != "co-cau-giai")
+   
     <div id="Zoom">
-    @endif
+
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @if($routeName != "home")
             <div class="wrapper2 @if($routeName == "co-cau-giai") wrapper_kl_rewards @endif">
@@ -52,10 +52,10 @@
             @endif
             <!-- #lucky-wrap -->
         </div>
-    @if($routeName != "co-cau-giai")
+   
         <!-- #Zoom -->
     </div>
-    @endif
+   
 
     @include('frontend.partials.kl_chat')
     <!-- Facebook -->
