@@ -23,7 +23,7 @@ class Customer extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['username', 'email', 'phone', 'status', 'type', 'date_from', 'date_to', 'updated_user', 'cmnd'];
+    protected $fillable = ['username', 'email', 'phone', 'status', 'type', 'date_from', 'date_to', 'updated_user', 'cmnd', 'fullname'];
     public function giftCode()
     {
         return $this->hasMany('App\Models\CustomerCode', 'customer_id');

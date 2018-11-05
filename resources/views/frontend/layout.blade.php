@@ -104,10 +104,10 @@
                             <form method="POST" action="{{ route('send-contact') }}" id="contactForm">
                                 {{ csrf_field() }}
                                 <div class="form-group row">
-                                    <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
+                                    <label for="fullname" class="col-sm-4 col-form-label kl_form_name">Họ và Tên :</label>
                                     <div class="col-sm-8 kl_form_field">  
-                                        <input type="text" class="form-control kl_form_input requireds" id="username" placeholder="Vui lòng nhập tên truy cập..." name="username" autocomplete="off">
-                                        <label class="required">Vui lòng nhập tên truy cập</label>
+                                        <input type="text" class="form-control kl_form_input requireds" id="fullname" placeholder="Vui lòng nhập họ và tên..." name="fullname" autocomplete="off">
+                                        <label class="required">Vui lòng nhập họ và tên</label>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -125,10 +125,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
+                                    <div class="col-sm-8 kl_form_field">  
+                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="Vui lòng nhập tên truy cập K8 nếu có..." name="username" autocomplete="off">
+                                        <label class="required">Vui lòng nhập tên truy cập</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
                                         <select class="form-control kl_form_input requireds" id="type" name="type">
-                                            <option value="">Vui lòng chọn 1...</option>
+                                            <option value="">Vui lòng chọn cách quy đổi nếu có...</option>
                                             <option value="1">Quy Đổi Tiền Gửi</option>
                                             <option value="2">Quy Đổi Tiền Thua Cược</option>
                                         </select>

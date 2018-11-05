@@ -62,6 +62,7 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>                            
+              <th>Họ tên</th>
               <th>Username</th>
               <th>Email</th>
               <th>Số điện thoại</th>
@@ -76,25 +77,35 @@
               @foreach( $items as $item )
                 <?php $i ++; ?>
               <tr id="row-{{ $item->id }}">
-                <td><span class="order">{{ $i }}</span></td>                       
+                <td><span class="order">{{ $i }}</span></td>   
                 <td>                  
                   
-                  @if($item->username != '')
+                  @if($item->fullname)
+                  {{ $item->fullname }}</br>
+                  @endif
+                </td>                    
+                <td>                  
+                  
+                  @if($item->username)
                   {{ $item->username }}</br>
                   @endif
                 </td>
                 <td>
-                  @if($item->email != '')
+                  @if($item->email)
                   <a href="{{ route( 'customer.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
                   @endif
                 </td>
                 <td>
-                  @if($item->phone != '')
+                  @if($item->phone)
                   {{ $item->phone }}</br>
                   @endif
                 </td>
-                <td>                  
-                  {{ $item->type == 1 ? "Quy Đổi Tiền Gửi" : "Quy Đổi Tiền Thua Cược" }}
+                <td>     
+                  @if($item->type == 1)
+                  Quy Đổi Tiền Gửi
+                  @elseif($item->type == 2)
+                  Quy Đổi Tiền Thua Cược
+                  @endif
                 </td>
                 <td>
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
