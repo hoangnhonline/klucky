@@ -134,7 +134,7 @@
                                 <div class="form-group row">
                                     <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
                                     <div class="col-sm-8 kl_form_field">
-                                        <select class="form-control kl_form_input requireds" id="type" name="type">
+                                        <select class="form-control kl_form_input" id="type" name="type">
                                             <option value="">Vui lòng chọn cách quy đổi nếu có...</option>
                                             <option value="1">Quy Đổi Tiền Gửi</option>
                                             <option value="2">Quy Đổi Tiền Thua Cược</option>
@@ -155,10 +155,10 @@
                                     <div class="col-sm-8 kl_form_field">
                                         <div class="form-inline row">
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input requireds datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
+                                                <input type="text" class="form-control kl_form_input datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
                                             </div>
                                             <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input requireds datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
+                                                <input type="text" class="form-control kl_form_input datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
