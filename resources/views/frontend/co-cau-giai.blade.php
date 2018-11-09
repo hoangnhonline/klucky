@@ -43,7 +43,7 @@
                     <div class="kl_btn_gr">
                         <div class="kl_table">
                             <div class="kl_tablecell text-center">
-                                <a href="{{ $settingArr['zalo_group'] }}" target="_blank" class="kl_btn_item" title="{!! $gift->name !!}">
+                                <a href="javascript:void(0)" class="kl_btn_item btnNhanSo" title="{!! $gift->name !!}">
                                     <span>Nhận ngay!</span>
                                 </a>
                             </div>

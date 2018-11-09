@@ -21,7 +21,7 @@ body {
     font-size: 14px;
     color: #fff;
     font-weight: 400;
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0 auto;
     position: relative;
     background-repeat: no-repeat;
@@ -104,6 +104,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .pageChild {
     background: #560001;
+}
+.kl_rewards_body {
+    overflow-y: scroll;
 }
 
 /* Header */
@@ -326,6 +329,19 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
     border-radius: 4px;
 }
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .kl_modal_betterlucknexttime .kl_text_while {
     margin-bottom: 15px;
 }
@@ -348,7 +364,7 @@ h1, h2, h3, h4, h5, h6, p {
     border-color: transparent;
     margin-top: 0.5rem;
     margin-bottom: 0;
-    display: block;
+    display: none;
     text-align: left;
 }
 .kl_formInformation .form-group {
@@ -988,6 +1004,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* ***** Home ***** */
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 .lucky-wrap {
     /*background: url(../images/bg.jpg) no-repeat center;*/
     min-height: 1331px;
@@ -1228,7 +1249,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* ***** RESPONSIVE ***** */
 @media (max-width: 1366px) {
-    .wrapper2 {
+    .wrapper, .wrapper2 {
         width: auto;
     }
     .kl_menu_content .kl_menu_item {
@@ -1341,9 +1362,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 @media (max-width: 767px) {
-    body {
-        background: #5b0012;
-    }
     .kl_slider .kl_slide_item .kl_starGift .fa-star {
         font-size: 100%;
     }
@@ -1352,6 +1370,9 @@ h1, h2, h3, h4, h5, h6, p {
     }
     .kl_background_child {
         background: #560001;
+    }
+    .wrapper {
+        max-width: 750px;
     }
     .wrapper2 {
         background: url(../images/bg2_mb.jpg) no-repeat top center;
@@ -1691,9 +1712,6 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 20px;
         margin-bottom: 0;
     }
-    .kl_contactNow p {
-        font-size: 6px;
-    }
     .kl_contactNow ul:last-child {
         margin-left: 0;
     }
@@ -1777,9 +1795,7 @@ h1, h2, h3, h4, h5, h6, p {
 	    width: 100%;
 	}
 }
-.kl_formInformation label.required{
-    display: none;
-}
+
 /*.lucky-wrap .randomizer-wrap .random-input span {
     position: relative;
 }
@@ -1826,3 +1842,6 @@ h1, h2, h3, h4, h5, h6, p {
     from {right: 0px;}
     to {right: 600px;}
 }*/
+label.required{
+    display: none;
+}

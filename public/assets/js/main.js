@@ -51,12 +51,13 @@
         return true;
       }
     }
+    
     // Change viewport
     function ChangeWiewport() {
         if (screen.width < 750) {
             $("#viewport").attr("content", "width=750");
         }else{
-            $("#viewport").attr("content", "width=750, maximum-scale=1.0, user-scalable=0");
+            $("#viewport").attr("content", "width=device-width, initial-scale=1");
         }
     }
     ChangeWiewport();
@@ -175,6 +176,8 @@
                     $('#successModal').modal('show');
                 }else if(data.success == 2){
                     $('#loseModal').modal('show');
+					$("#losing_video")[0].src += "&autoplay=1";
+					$("#losing_video")[0].allow = "autoplay";
                 }          
               }
         });
@@ -223,6 +226,8 @@
                 $('#contactForm input, #contactForm select').val('');
                 $('#infoModal').modal('hide');
                 $('#sendSuccessModal').modal('show');  
+				$("#success_video")[0].src += "&autoplay=1";
+				$("#success_video")[0].allow = "autoplay";
               }
               
             }
@@ -233,4 +238,35 @@
       $('.modal').modal('hide');
       $('#infoModal').modal('show');
      });
+
+    // Video Embed Youtube
+    // Find all YouTube videos
+    var $allVideos = $("iframe[src^='//www.youtube.com']"),
+    // The element that is fluid width
+    $fluidEl = $("body");
+    // Figure out and save aspect ratio for each video
+    $allVideos.each(function() {
+      $(this)
+      .data('aspectRatio', this.height / this.width)
+      // and remove the hard coded width/height
+      .removeAttr('height')
+      .removeAttr('width');
+    });
+
+    // When the window is resized
+    $(window).resize(function() {
+      var newWidth = $fluidEl.width();
+    // Resize all videos according to their own aspect ratio
+      $allVideos.each(function() {
+        var $el = $(this);
+        $el
+        .width(newWidth)
+        .height(newWidth * $el.data('aspectRatio'));
+      });
+    // Kick off one resize to fix all videos on page load
+    }).resize();
+
+    if ($('.wrapper2').hasClass('wrapper_kl_rewards')) {
+        $('.wrapper2').closest('body').addClass('kl_rewards_body');   
+    }
 })(jQuery); // End of use strict

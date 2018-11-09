@@ -42,14 +42,14 @@
     <div id="Zoom">
 
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
-            @if($routeName != "home")
+            @if($routeName == "home")
+            <div class="wrapper">
+            @else
             <div class="wrapper2 @if($routeName == "co-cau-giai") wrapper_kl_rewards @endif">
             @endif
             @include('frontend.partials.header')            
             @yield('content')   
-            @if($routeName != "home")
             </div>
-            @endif
             <!-- #lucky-wrap -->
         </div>
    
@@ -73,7 +73,7 @@
                             Chúng tôi nhận được thông tin thành công<br>Ban Tổ Chức sẽ liên hệ lại Quý Khách<br>Trong thời gian không quá 24 giờ.
                         </p>
                         <div class="kl_modal_video">
-                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0&autoplay=1" frameborder="0" allowfullscreen id="load_video" allow='autoplay'></iframe>
+                            <iframe id="success_video" width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
                         </div>
                         <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
                          <div class="line">
@@ -206,11 +206,11 @@
                             Cơ Hội Vẫn Còn !
                         </p>
                         <div class="kl_modal_video">
-                            <iframe width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&autoplay=1" frameborder="0" allowfullscreen id="load_video" allow='autoplay'></iframe>
+                            <iframe width="550" id="losing_video" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&loop=1" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
                         </div>
                         <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
                         <p class="text-center">
-                            <a href="https://www.facebook.com/messages/requests/t/1966108620112100" target="_blank" class="kl_btn">
+                            <a href="{!! $settingArr['facebook_messenger'] !!}" target="_blank" class="kl_btn">
                                 <span>Nhận Thêm Số </span>
                             </a>
                         </p>

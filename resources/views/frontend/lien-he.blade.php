@@ -14,7 +14,15 @@
 
             <div class="kl_contactNow">
                 <p><a href="{{ $settingArr['zalo_group'] }}" target="_blank" title="hỗ trợ trực tuyến"><span>Hoặc liên hệ ngay hỗ trợ trực tuyến tại đây.</span></a></p>
-               
+                 <div class="kl_contactNow_ct">
+                    <ul>
+                       <li>
+                            <img src="{{ URL::asset('assets/images/ct_zalo.png') }}" alt="Zalo">
+                            <span>{!! $settingArr['zalo'] !!}</span>
+                        </li>
+                       
+                    </ul>                    
+                </div>
             </div>
         </div>
         <a href="{!! $settingArr['zalo_group'] !!}" title="Zalo Lily Nguyễn" class="kl_girl" target="_blank">
