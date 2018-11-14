@@ -79,7 +79,12 @@ class HomeController extends Controller
         $seo['description'] = 'Liên hệ';        
         return view('frontend.lien-he', compact('seo', 'socialImage'));
     }
+	public function dangKy(Request $request){        
 
+        $seo['title'] = 'Đăng ký nhận số';
+        $seo['description'] = 'Đăng ký nhận số';        
+        return view('frontend.dang-ky', compact('seo', 'socialImage'));
+    }
     public function getContent(Request $request){        
         $id = $request->id ? $request->id : null;
         if($id){

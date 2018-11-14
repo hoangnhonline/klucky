@@ -7,6 +7,7 @@
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index,follow" />
     <meta http-equiv="content-language" content="vi" />
+	<meta name="google-site-verification" content="BXVRZ2u5FO_AXbwc143C2O6nbM5pQZO8r8FdGAHGbgU" />
     <meta name="description" content="@yield('site_description')" />        
     <link rel="canonical" href="{{ url()->current() }}" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -38,9 +39,9 @@
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
-   
+    @if($routeName != "dang-ky")
     <div id="Zoom">
-
+	@endif
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @if($routeName == "home")
             <div class="wrapper">
@@ -52,9 +53,10 @@
             </div>
             <!-- #lucky-wrap -->
         </div>
-   
+	@if($routeName == "dang-ky")
         <!-- #Zoom -->
     </div>
+	@endif
    
 
     @include('frontend.partials.kl_chat')
@@ -88,6 +90,7 @@
                 </div>
             </div>
         </div>
+		@if($routeName != 'dang-ky')
     <div class="modal fade show" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
                 <div class="modal-content kl_modal_content kl_modal_information">
@@ -124,45 +127,7 @@
                                         <label class="required">Email không hợp lệ.</label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="username" class="col-sm-4 col-form-label kl_form_name">Tên Truy Cập :</label>
-                                    <div class="col-sm-8 kl_form_field">  
-                                        <input type="text" class="form-control kl_form_input" id="username" placeholder="Vui lòng nhập tên truy cập K8 nếu có..." name="username" autocomplete="off">
-                                        <label class="required">Vui lòng nhập tên truy cập</label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="change" class="col-sm-4 col-form-label kl_form_name">Cách Quy Đổi :</label>
-                                    <div class="col-sm-8 kl_form_field">
-                                        <select class="form-control kl_form_input" id="type" name="type">
-                                            <option value="">Vui lòng chọn cách quy đổi nếu có...</option>
-                                            <option value="1">Quy Đổi Tiền Gửi</option>
-                                            <option value="2">Quy Đổi Tiền Thua Cược</option>
-                                        </select>
-                                    </div>
-                                </div>
-                               <!--  <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label"></label>
-                                    <div class="col-sm-8 kl_form_field">
-                                        <div class="form-inline">
-                                            <div class="kl_form_name form-inline_col px-4 text-right">Từ  Ngày</div>
-                                            <div class="kl_form_name form-inline_col px-4 text-right">Đến Ngày</div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label kl_form_name kl_hide_moblie">Chọn ngày :</label>
-                                    <div class="col-sm-8 kl_form_field">
-                                        <div class="form-inline row">
-                                            <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input datepicker" placeholder="Từ ngày..." id="date_from" name="date_from" autocomplete="off">
-                                            </div>
-                                            <div class="form-inline_col">
-                                                <input type="text" class="form-control kl_form_input datepicker" placeholder="Đến ngày..." id="date_to" name="date_to" autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label kl_form_name"></label>
                                     <div class="col-sm-8 kl_form_field">
@@ -193,6 +158,7 @@
                 </div>
             </div>
         </div>
+		@endif
     <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
                 <div class="modal-content kl_modal_content kl_modal_betterlucknexttime">

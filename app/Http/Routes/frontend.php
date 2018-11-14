@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('/lien-he.html', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::get('/get-content', ['as' => 'get-content', 'uses' => 'HomeController@getContent']);
     Route::get('/check-no', ['as' => 'check-no', 'uses' => 'HomeController@checkNo']);
+	Route::get('/dang-ky-nhan-so.html', ['as' => 'dang-ky', 'uses' => 'HomeController@dangKy']);
     Route::post('/send-contact', ['as' => 'send-contact', 'uses' => 'HomeController@sendContact']);
 });
 
