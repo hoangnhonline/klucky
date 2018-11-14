@@ -63,127 +63,127 @@
     <!-- Facebook -->
     <!-- Modal -->
     <div class="modal fade" id="sendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
-            <div class="modal-content kl_modal_content kl_modal_betterlucknexttime kl_modal_submit">
-                <div class="kl_btn_close_modal">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}" alt="close">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="kl_modal_title text-center kl_modal_title_size">
-                        Chúng tôi nhận được thông tin thành công<br>Ban Tổ Chức sẽ liên hệ lại Quý Khách<br>Trong thời gian không quá 24 giờ.
-                    </p>
-                    <div class="kl_modal_video">
-                        <iframe id="success_video" width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_betterlucknexttime kl_modal_submit">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}" alt="close">
+                        </button>
                     </div>
-                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
-                     <div class="line">
-                        <img src="{{ URL::asset('assets/images/line.png') }}" alt="Line">
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Chúng tôi nhận được thông tin thành công<br>Ban Tổ Chức sẽ liên hệ lại Quý Khách<br>Trong thời gian không quá 24 giờ.
+                        </p>
+                        <div class="kl_modal_video">
+                            <iframe id="success_video" width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
+                        </div>
+                        <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
+                         <div class="line">
+                            <img src="{{ URL::asset('assets/images/line.png') }}" alt="Line">
+                        </div>
+                        <p class="text-center">
+                            <a href="{!! $settingArr['zalo_group'] !!}" target="_blank" class="kl_btn mt-5">
+                                <span>LIÊN HỆ LILY</span>
+                            </a>
+                        </p>
                     </div>
-                    <p class="text-center">
-                        <a href="{!! $settingArr['zalo_group'] !!}" target="_blank" class="kl_btn mt-5">
-                            <span>LIÊN HỆ LILY</span>
-                        </a>
-                    </p>
                 </div>
             </div>
         </div>
-    </div>
-	@if($routeName != 'dang-ky')
+		@if($routeName != 'dang-ky')
     <div class="modal fade show" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
-            <div class="modal-content kl_modal_content kl_modal_information kl_modal_information_home">
-                <div class="kl_btn_close_modal">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="kl_modal_title text-center kl_modal_title_size">
-                        Nhập đầy đủ thông tin để nhận số
-                    </p>
-                    <div class="kl_formInformation">
-                        <form method="POST" action="{{ route('send-contact') }}" id="contactForm">
-                            {{ csrf_field() }}
-                            <div class="form-group row">
-                                <label for="fullname" class="col-sm-4 col-form-label kl_form_name">Họ và Tên :</label>
-                                <div class="col-sm-8 kl_form_field">  
-                                    <input type="text" class="form-control kl_form_input requireds" id="fullname" placeholder="Vui lòng nhập họ và tên..." name="fullname" autocomplete="off">
-                                    <label class="required">Vui lòng nhập họ và tên</label>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
-                                <div class="col-sm-8 kl_form_field"> 
-                                    <input type="text" class="form-control kl_form_input requireds number" id="phone" maxlength="10" placeholder="Vui lòng nhập số điện thoại..." name="phone" autocomplete="off"><label class="required">Vui lòng nhập số điện thoại</label>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
-                                <div class="col-sm-8 kl_form_field">
-                                    
-                                    <input type="email" class="form-control kl_form_input requireds" id="email" placeholder="Vui lòng nhập địa chỉ email" name="email" autocomplete="off">
-                                    <label class="required">Email không hợp lệ.</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label kl_form_name"></label>
-                                <div class="col-sm-8 kl_form_field">
-                                    <div class="text-center">
-                                        <button type="button" id="btnSend" class="kl_btn">
-                                            <span>GỬI ĐI</span>
-                                        </button>
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_information">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Nhập đầy đủ thông tin để nhận số
+                        </p>
+                        <div class="kl_formInformation">
+                            <form method="POST" action="{{ route('send-contact') }}" id="contactForm">
+                                {{ csrf_field() }}
+                                <div class="form-group row">
+                                    <label for="fullname" class="col-sm-4 col-form-label kl_form_name">Họ và Tên :</label>
+                                    <div class="col-sm-8 kl_form_field">  
+                                        <input type="text" class="form-control kl_form_input requireds" id="fullname" placeholder="Vui lòng nhập họ và tên..." name="fullname" autocomplete="off">
+                                        <label class="required">Vui lòng nhập họ và tên</label>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="phonenumber" class="col-sm-4 col-form-label kl_form_name">Số Điện Thoại / Zalo :</label>
+                                    <div class="col-sm-8 kl_form_field"> 
+                                        <input type="text" class="form-control kl_form_input requireds number" id="phone" maxlength="10" placeholder="Vui lòng nhập số điện thoại..." name="phone" autocomplete="off"><label class="required">Vui lòng nhập số điện thoại</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-4 col-form-label kl_form_name">Email :</label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        
+                                        <input type="email" class="form-control kl_form_input requireds" id="email" placeholder="Vui lòng nhập địa chỉ email" name="email" autocomplete="off">
+                                        <label class="required">Email không hợp lệ.</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label kl_form_name"></label>
+                                    <div class="col-sm-8 kl_form_field">
+                                        <div class="text-center">
+                                            <button type="button" id="btnSend" class="kl_btn">
+                                                <span>GỬI ĐI</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="line">
+                                <img src="{{ URL::asset('assets/images/line.png') }}" alt="line">
                             </div>
-                        </form>
-                        <div class="line">
-                            <img src="{{ URL::asset('assets/images/line.png') }}" alt="line">
-                        </div>
-                        <div class="kl_register">
-                            <p class="text-center kl_text_while">Bạn chưa có tên truy cập hoặc mã giao dịch ?</p>
-                            <div class="btn-group">
-                                <a href="{!! $settingArr['facebook_messenger'] !!}" class="kl_btn mr-3" target="_blank">
-                                    <span>CLICK NGAY</span>
-                                </a>
-                                <a href="{!! $settingArr['zalo_group'] !!}" class="kl_btn" target="_blank">
-                                    <span>LIÊN HỆ LILY</span>
-                                </a>
+                            <div class="kl_register">
+                                <p class="text-center kl_text_while">Bạn chưa có tên truy cập hoặc mã giao dịch ?</p>
+                                <div class="btn-group">
+                                    <a href="{!! $settingArr['facebook_messenger'] !!}" class="kl_btn mr-3" target="_blank">
+                                        <span>CLICK NGAY</span>
+                                    </a>
+                                    <a href="{!! $settingArr['zalo_group'] !!}" class="kl_btn" target="_blank">
+                                        <span>LIÊN HỆ LILY</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-	@endif
+		@endif
     <div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
-            <div class="modal-content kl_modal_content kl_modal_betterlucknexttime">
-                <div class="kl_btn_close_modal">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="kl_modal_title text-center kl_modal_title_size">
-                        Cơ Hội Vẫn Còn !
-                    </p>
-                    <div class="kl_modal_video">
-                        <iframe width="550" id="losing_video" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&loop=1" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
+            <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
+                <div class="modal-content kl_modal_content kl_modal_betterlucknexttime">
+                    <div class="kl_btn_close_modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="{{ URL::asset('assets/images/kl_close_modal.png') }}">
+                        </button>
                     </div>
-                    <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
-                    <p class="text-center">
-                        <a href="{!! $settingArr['facebook_messenger'] !!}" target="_blank" class="kl_btn">
-                            <span>Nhận Thêm Số </span>
-                        </a>
-                    </p>
+                    <div class="modal-body">
+                        <p class="kl_modal_title text-center kl_modal_title_size">
+                            Cơ Hội Vẫn Còn !
+                        </p>
+                        <div class="kl_modal_video">
+                            <iframe width="550" id="losing_video" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&loop=1" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
+                        </div>
+                        <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
+                        <p class="text-center">
+                            <a href="{!! $settingArr['facebook_messenger'] !!}" target="_blank" class="kl_btn">
+                                <span>Nhận Thêm Số </span>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog modal-dialog-centered kl_modal" role="document">
             <div class="modal-content kl_modal_content kl_modal_prizes">
