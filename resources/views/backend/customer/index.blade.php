@@ -4,7 +4,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Khách hàng nhận số
+    @if($type == 1)
+    Khách hàng
+    @else
+    Member
+    @endif
+     nhận số
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -20,13 +25,18 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif     
+      @if($type == 1)
       <a href="{{ route('customer.create') }}" class="btn btn-info btn-sm" style="margin-bottom:5px">Thêm khách hàng</a>
+      @endif
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('customer.index') }}" id="frmContact">                                                
+          <form class="form-inline" role="form" method="GET" action="{{ route('customer.index') }}" id="frmContact">  
+            <input type="hidden" name="type" value="{{ $type }}">  
+            @if($type == 1)                                    
+          
             <div class="form-group">
               <label for="name">Email :</label>
               <input type="text" class="form-control" name="email" value="{{ $email }}">
@@ -35,6 +45,12 @@
               <label for="name">&nbsp;&nbsp;Phone :</label>
               <input type="text" class="form-control" name="phone" value="{{ $phone }}">
             </div>
+            @else
+            <div class="form-group">
+              <label for="name">&nbsp;&nbsp;Username :</label>
+              <input type="text" class="form-control" name="username" value="{{ $username }}">
+            </div>
+            @endif
             <div class="form-group">
               <label for="name">&nbsp;&nbsp;Trạng thái :</label>
               <select class="form-control" name="status" id="status">
@@ -42,15 +58,7 @@
                 <option value="1" {{ $status == 1  ? "selected" : "" }}>Chưa gửi số</option>
                 <option value="2" {{ $status == 2  ? "selected" : "" }}>Đã gửi số</option>
               </select>
-            </div>
-			<div class="form-group">
-              <label for="name">&nbsp;&nbsp;Phân loại :</label>
-              <select class="form-control" name="type" id="type">
-                <option value="">--Tất cả--</option>
-                <option value="1" {{ $type == 1  ? "selected" : "" }}>Khách</option>
-                <option value="2" {{ $type == 2  ? "selected" : "" }}>Member</option>
-              </select>
-            </div>
+            </div>			     
             <button type="submit" class="btn btn-default">Lọc</button>
           </form>         
         </div>
@@ -65,15 +73,19 @@
         <div class="box-body">
         <!-- <a href="{{ route('customer.export') }}" class="btn btn-info btn-sm" style="margin-bottom:5px;float:right" target="_blank">Export</a> -->
           <div style="text-align:center">
-            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone] )->links() }}
+            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone, 'type' => $type, 'username' => $username] )->links() }}
           </div>  
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>                            
+              @if($type == 1)
               <th>Họ tên</th>
+              @endif
               <th>Username</th>
+              @if($type == 1)
               <th>Email</th>
               <th>Số điện thoại</th>
+              @endif
               <th>Quy đổi</th>
               <th>Thời gian</th>
               <th width="10%">Thời gian gửi</th>
@@ -86,28 +98,33 @@
                 <?php $i ++; ?>
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>   
+                @if($type == 1)
                 <td>                  
                   
                   @if($item->fullname)
                   {{ $item->fullname }}</br>
                   @endif
-                </td>                    
+                </td>          
+                @endif          
                 <td>                  
                   
                   @if($item->username)
                   {{ $item->username }}</br>
                   @endif
                 </td>
+                @if($type == 1)
                 <td>
                   @if($item->email)
                   <a href="{{ route( 'customer.edit', [ 'id' => $item->id ]) }}">{{ $item->email }}</a>
                   @endif
                 </td>
+                
                 <td>
                   @if($item->phone)
                   {{ $item->phone }}</br>
                   @endif
                 </td>
+                @endif
                 <td>     
                   @if($item->type == 1)
                   Quy Đổi Tiền Gửi
@@ -140,7 +157,7 @@
           </tbody>
           </table>
           <div style="text-align:center">
-            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone] )->links() }}
+            {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone, 'type' => $type, 'username' => $username] )->links() }}
           </div>  
         </div>        
       </div>

@@ -15,7 +15,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <a class="btn btn-default btn-sm" href="{{ route('customer.index') }}" style="margin-bottom:5px">Quay lại</a>
+    <a class="btn btn-default btn-sm" href="{{ route('customer.index') }}?type=1" style="margin-bottom:5px">Quay lại</a>
     <form role="form" method="POST" action="{{ route('customer.store') }}">
     <div class="row">
       <!-- left column -->
@@ -65,11 +65,11 @@
                 </div>                     
                 <div class="row">
                     <div class="form-group col-md-6">
-                      <label for="email">Từ ngày <span class="red-star">*</span></label>
+                      <label for="email">Từ ngày </label>
                       <input type="text" name="date_from" id="date_from" value="{{ old('date_from') }}" class="form-control datepicker">
                     </div> 
                     <div class="form-group col-md-6">
-                      <label for="email">Đến ngày <span class="red-star">*</span></label>
+                      <label for="email">Đến ngày </label>
                       <input type="text" name="date_to" id="date_to" value="{{ old('date_to') }}" class="form-control datepicker">
                     </div> 
                 </div>                   
@@ -86,7 +86,7 @@
             </div>            
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
-              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('customer.index')}}">Hủy</a>
+              <a class="btn btn-default btn-sm" class="btn btn-primary btn-sm" href="{{ route('customer.index')}}?type=1">Hủy</a>
             </div>
             
         </div>

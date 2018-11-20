@@ -37,15 +37,9 @@ class CustomerController extends Controller
         $dataArr = $request->all();        
         $this->validate($request,[                                                
             'email' => 'required_without:phone',
-            'phone' => 'required_without:email',           
-            'date_from' => 'required',          
-            'date_to' => 'required',            
-        ],
-        [                        
-            'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
-            'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
-            
-        ]);   
+            'phone' => 'required_without:email',
+        ]
+        );   
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         $rs = Customer::create($dataArr);
@@ -63,8 +57,7 @@ class CustomerController extends Controller
             }
         }
         Session::flash('message', 'Tạo mới thành công');
-
-        return redirect()->route('customer.index');
+        return redirect()->route('customer.edit', ['id' => $rs->id]);
     }
     public function update(Request $request)
     {
@@ -72,13 +65,7 @@ class CustomerController extends Controller
         $this->validate($request,[                                                
              'email' => 'required_without:phone',
             'phone' => 'required_without:email',              
-            'date_from' => 'required',          
-            'date_to' => 'required',            
-        ],
-        [                        
-            'date_from.required' => 'Bạn chưa nhập từ ngày',                                  
-            'date_to.required' => 'Bạn chưa nhập đến ngày',                                 
-            
+                       
         ]);   
         $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to'])); 
@@ -115,6 +102,7 @@ class CustomerController extends Controller
         $type = isset($request->type) ? $request->type : null;
         $email = isset($request->email) && $request->email != '' ? $request->email : '';
         $phone = isset($request->phone) && $request->phone != '' ? $request->phone : '';
+         $username = isset($request->username) && $request->username != '' ? $request->username : '';
         
         $query = Customer::whereRaw('1')->orderBy('id', 'DESC');
 
@@ -127,13 +115,16 @@ class CustomerController extends Controller
         if( $email != ''){
             $query->where('email', 'LIKE', '%'.$email.'%');
         }
+        if( $username != ''){
+            $query->where('username', 'LIKE', '%'.$username.'%');
+        }
         if( $phone != ''){
             $query->where('phone', 'LIKE', '%'.$phone.'%');
         }
        
         $items = $query->orderBy('id', 'desc')->paginate(20);
         
-        return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone', 'type'));
+        return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone', 'type', 'username'));
     }    
     public function download()
     {

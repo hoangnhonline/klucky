@@ -61,17 +61,19 @@
       <li class="treeview {{ in_array(\Request::route()->getName(), ['customer.index', 'customer.create', 'customer.edit']) ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-pencil-square-o"></i> 
-          <span>Khách hàng nhận số</span>
+          <span>Danh sách nhận số</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index']) ? "class=active" : "" }}><a href="{{ route('customer.index') }}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index']) && isset($type) && $type == 1 ? "class=active" : "" }}><a href="{{ route('customer.index') }}?type=1"><i class="fa fa-circle-o"></i> KHÁCH</a></li>
+          <li {{ in_array(\Request::route()->getName(), ['customer.edit', 'customer.index'])&& isset($type) && $type == 2 ? "class=active" : "" }}><a href="{{ route('customer.index') }}?type=2"><i class="fa fa-circle-o"></i> MEMBER</a></li>
           <li {{ in_array(\Request::route()->getName(), ['customer.create']) ? "class=active" : "" }} ><a href="{{ route('customer.create') }}"><i class="fa fa-circle-o"></i> Thêm khách hàng</a></li>     
         </ul>
        
-      </li>      
+      </li> 
+        
       
      <li class="{{ in_array(\Request::route()->getName(), ['settings.index']) ? 'active' : '' }}">
         <a href="{{ route('settings.index') }}">
