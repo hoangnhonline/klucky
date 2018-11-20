@@ -43,6 +43,14 @@
                 <option value="2" {{ $status == 2  ? "selected" : "" }}>Đã gửi số</option>
               </select>
             </div>
+			<div class="form-group">
+              <label for="name">&nbsp;&nbsp;Phân loại :</label>
+              <select class="form-control" name="type" id="type">
+                <option value="">--Tất cả--</option>
+                <option value="1" {{ $type == 1  ? "selected" : "" }}>Khách</option>
+                <option value="2" {{ $type == 2  ? "selected" : "" }}>Member</option>
+              </select>
+            </div>
             <button type="submit" class="btn btn-default">Lọc</button>
           </form>         
         </div>
@@ -161,7 +169,7 @@ function callDelete(name, url){
   return flag;
 }
 $(document).ready(function(){
-  $('#status').change(function(){
+  $('#status, #type').change(function(){
     $('#frmContact').submit();
   });
   

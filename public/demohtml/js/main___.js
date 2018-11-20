@@ -176,8 +176,6 @@
                     $('#successModal').modal('show');
                 }else if(data.success == 2){
                     $('#loseModal').modal('show');
-					$("#losing_video")[0].src += "&autoplay=1";
-					$("#losing_video")[0].allow = "autoplay";
                 }          
               }
         });
@@ -193,43 +191,7 @@
      $(document).on('click', 'a.btnConfirm', function(){
       $('.modal').modal('hide');
       $('#confirmModal').modal('show');
-     }); 
- $('#btnSend2').click(function(){
-        var error = 0;
-        $('#contactForm input.requireds, #contactForm select.requireds').each(function(){
-          if($.trim($(this).val()) == ""){
-            error++;
-            $(this).next().show();
-          }else{
-            $(this).next().hide();
-          }
-
-        });        
-        
-        if(error > 0){
-          return false;
-        }else{              
-          $('#btnSend2').attr('disabled','disabled');     
-          $.ajax({
-            url : $('#contactForm').attr('action'),
-            type : 'POST',
-            data : $('#contactForm').serialize(),
-            dataType : 'json',
-            async: false,
-            success : function(data){
-              if(data.success == 1){
-                $('#contactForm input, #contactForm select').val('');
-                $('#infoModal').modal('hide');
-                $('#sendSuccessModal').modal('show');  
-				$("#success_video")[0].src += "&autoplay=1";
-				$("#success_video")[0].allow = "autoplay";
-				$('#btnSend2').removeAttr('disabled');   
-              }
-              
-            }
-          });
-        }
-     });	 
+     });     
      $('#btnSend').click(function(){
         var error = 0;
         $('#contactForm input.requireds, #contactForm select.requireds').each(function(){
@@ -262,8 +224,6 @@
                 $('#contactForm input, #contactForm select').val('');
                 $('#infoModal').modal('hide');
                 $('#sendSuccessModal').modal('show');  
-				$("#success_video")[0].src += "&autoplay=1";
-				$("#success_video")[0].allow = "autoplay";
               }
               
             }

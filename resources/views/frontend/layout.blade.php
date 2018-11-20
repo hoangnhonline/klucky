@@ -39,9 +39,9 @@
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
-    @if($routeName != "dang-ky")
+  
     <div id="Zoom">
-	@endif
+	
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
             @if($routeName == "home")
             <div class="wrapper">
@@ -53,13 +53,11 @@
             </div>
             <!-- #lucky-wrap -->
         </div>
-	@if($routeName == "dang-ky")
+	
         <!-- #Zoom -->
     </div>
-	@endif
-   
+	
 
-    @include('frontend.partials.kl_chat')
     <!-- Facebook -->
     <!-- Modal -->
     <div class="modal fade" id="sendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -283,6 +281,15 @@
     <input type="hidden" value="{{ route('get-content') }}" id="route_get_content">
     <input type="hidden" value="{{ route('check-no') }}" id="route_check_no">
     @yield('js')
+	<!--Start of Zendesk Chat Script-->
+	<script type="text/javascript">
+	window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+	d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+	_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+	$.src="https://v2.zopim.com/?69obQnoMWF2uU3ZkKaarvAN56R4WvgOw";z.t=+new Date;$.
+	type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+	</script>
+	<!--End of Zendesk Chat Script-->
 </body>
 
 </html>

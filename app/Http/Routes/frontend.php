@@ -22,5 +22,6 @@ Route::group(['namespace' => 'Frontend'], function()
     Route::get('/check-no', ['as' => 'check-no', 'uses' => 'HomeController@checkNo']);
 	Route::get('/dang-ky-nhan-so.html', ['as' => 'dang-ky', 'uses' => 'HomeController@dangKy']);
     Route::post('/send-contact', ['as' => 'send-contact', 'uses' => 'HomeController@sendContact']);
+	Route::post('/send-contact-2', ['as' => 'send-contact-2', 'uses' => 'HomeController@sendContact2']);
 });
 

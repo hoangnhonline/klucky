@@ -112,7 +112,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $status = isset($request->status) ? $request->status : null;
-        
+        $type = isset($request->type) ? $request->type : null;
         $email = isset($request->email) && $request->email != '' ? $request->email : '';
         $phone = isset($request->phone) && $request->phone != '' ? $request->phone : '';
         
@@ -121,7 +121,9 @@ class CustomerController extends Controller
         if( $status > 0){
             $query->where('status', $status);
         }
-        
+        if( $type){
+            $query->where('type', $type);
+        }
         if( $email != ''){
             $query->where('email', 'LIKE', '%'.$email.'%');
         }
@@ -131,7 +133,7 @@ class CustomerController extends Controller
        
         $items = $query->orderBy('id', 'desc')->paginate(20);
         
-        return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone'));
+        return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone', 'type'));
     }    
     public function download()
     {

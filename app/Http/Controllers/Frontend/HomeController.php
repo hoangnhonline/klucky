@@ -118,12 +118,21 @@ class HomeController extends Controller
     }
     public function sendContact(Request $request){
         $dataArr = $request->all();   
+        
+        $dataArr['date_from'] = $dataArr['date_to'] = null;
+        $dataArr['type'] = 1;
+        Customer::create($dataArr);   
+        return json_encode(['success' => 1]);     
+    }
+	 public function sendContact2(Request $request){
+        $dataArr = $request->all();   
         if($dataArr['date_from'] && $dataArr['date_to']){    
             $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
             $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));        
         }else{
             $dataArr['date_from'] = $dataArr['date_to'] = null;
         }
+		$dataArr['type'] = 2;
         Customer::create($dataArr);   
         return json_encode(['success' => 1]);     
     }
