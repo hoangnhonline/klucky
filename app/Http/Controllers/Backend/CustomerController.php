@@ -36,12 +36,16 @@ class CustomerController extends Controller
     {
         $dataArr = $request->all();        
         $this->validate($request,[                                                
-            'email' => 'required_without:phone',
             'phone' => 'required_without:email',
+            'email' => 'required_without:phone',            
+        ],
+        [
+            'email.required_without' => 'Vui lòng nhập email nếu không có số điện thoại.',
+            'phone.required_without' => 'Vui lòng nhập số điện thoại nếu không có email.',
         ]
-        );   
-        $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
-        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
+        );        
+        $dataArr['date_from'] = $dataArr['date_from'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
+        $dataArr['date_to'] =  $dataArr['date_to'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         $rs = Customer::create($dataArr);
         // xu ly tags
         if( !empty( $dataArr['so_may_man'] ) && $rs->id ){
@@ -63,12 +67,16 @@ class CustomerController extends Controller
     {
         $dataArr = $request->all();
         $this->validate($request,[                                                
-             'email' => 'required_without:phone',
-            'phone' => 'required_without:email',              
-                       
-        ]);   
-        $dataArr['date_from'] = date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
-        $dataArr['date_to'] = date('Y-m-d H:i:s', strtotime($dataArr['date_to'])); 
+            'phone' => 'required_without:email',
+            'email' => 'required_without:phone',            
+        ],
+        [
+            'email.required_without' => 'Vui lòng nhập email nếu không có số điện thoại.',
+            'phone.required_without' => 'Vui lòng nhập số điện thoại nếu không có email.',
+        ]
+        );   
+        $dataArr['date_from'] = $dataArr['date_from'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
+        $dataArr['date_to'] =  $dataArr['date_to'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         
         $model = Customer::find($dataArr['id']);
 
@@ -212,6 +220,6 @@ class CustomerController extends Controller
 
         // redirect
         Session::flash('message', 'Xóa customer thành công');
-        return redirect()->route('customer.index');
+        return redirect()->route('customer.index', ['type' => $model->type]);
     }
 }

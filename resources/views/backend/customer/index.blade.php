@@ -74,21 +74,24 @@
         <!-- <a href="{{ route('customer.export') }}" class="btn btn-info btn-sm" style="margin-bottom:5px;float:right" target="_blank">Export</a> -->
           <div style="text-align:center">
             {{ $items->appends( ['status' => $status, 'email' => $email, 'phone' => $phone, 'type' => $type, 'username' => $username] )->links() }}
-          </div>  
+          </div>
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>                            
               @if($type == 1)
               <th>Họ tên</th>
-              @endif
+              @else
               <th>Username</th>
+              @endif
               @if($type == 1)
               <th>Email</th>
               <th>Số điện thoại</th>
-              @endif
+              @else
               <th>Quy đổi</th>
               <th>Thời gian</th>
+              @endif
               <th width="10%">Thời gian gửi</th>
+              <th>Số</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -105,13 +108,14 @@
                   {{ $item->fullname }}</br>
                   @endif
                 </td>          
-                @endif          
+                @else         
                 <td>                  
                   
                   @if($item->username)
                   {{ $item->username }}</br>
                   @endif
                 </td>
+                @endif
                 @if($type == 1)
                 <td>
                   @if($item->email)
@@ -124,7 +128,7 @@
                   {{ $item->phone }}</br>
                   @endif
                 </td>
-                @endif
+                @else
                 <td>     
                   @if($item->type == 1)
                   Quy Đổi Tiền Gửi
@@ -137,7 +141,18 @@
                   {{ date('d/m/Y', strtotime($item->date_from)) }} - {{ date('d/m/Y', strtotime($item->date_to)) }}
                   @endif
                 </td>
+                @endif
                 <td style="white-space:nowrap">{{ date('d-m-Y H:i', strtotime($item->created_at)) }}</td>
+                <td>
+                  @if($item->giftCode->count() > 0)
+                  @foreach($item->giftCode as $code)
+                  <?php 
+                  echo $code->giftCode->code;
+                  echo "<br>";
+                  ?>
+                  @endforeach
+                  @endif
+                </td>
                 <td style="white-space:nowrap;text-align: right;">   
                                                                  
                   <a class="btn btn-success btn-sm" href="{{ route('customer.edit', [ 'id' => $item->id ])}}" ><span class="badge">{{ $item->giftCode->count() }}</span> Số </a>
