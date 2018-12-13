@@ -90,6 +90,9 @@
                     </div> 
                 </div>                   
                  <div class="form-group">
+                  <?php 
+                  dd($tmpArr);
+                  ?>
                     <label>Số may mắn</label>
                     <select class="form-control select2" name="so_may_man[]" id="so_may_man" multiple="multiple">                  
                       @if( $codeList->count() > 0)
@@ -100,13 +103,17 @@
                       @if( $tmpArr->count() > 0)
                         @foreach( $tmpArr as $value )
                         @if($value->status == 1)
-                        <option value="{{ $value->code_id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}</option>
+                        <option value="{{ $value->code_id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}xxx</option>
                         @endif
                         @endforeach                        
                       @endif
                     </select>
                     
                   </div> 
+                  <div class="form-group">
+                  <label>Nhiều số may mắn ( cách nhau dấu , )</label>
+                  <textarea class="form-control" rows="5" name="multi_number"></textarea>        
+                </div>
             </div>            
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>

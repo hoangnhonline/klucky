@@ -34,6 +34,7 @@ class CustomerController extends Controller
     }
     public function store(Request $request)
     {
+
         $dataArr = $request->all();        
         $this->validate($request,[                                                
             'phone' => 'required_without:email',
@@ -48,16 +49,40 @@ class CustomerController extends Controller
         $dataArr['date_to'] =  $dataArr['date_to'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         $rs = Customer::create($dataArr);
         // xu ly tags
+
         if( !empty( $dataArr['so_may_man'] ) && $rs->id ){
             foreach ($dataArr['so_may_man'] as $code_id) {
-                GiftCode::find($code_id)->update(['status' => 2]);
-                $model = new CustomerCode;
-                $model->customer_id = $rs->id;
-                $model->code_id  = $code_id;
-                $model->status = 1;
-                $model->save();
 
+                $rs1 = CustomerCode::where('code_id', $code_id)->count();
+                if($rs1 == 0){
+                    GiftCode::find($code_id)->update(['status' => 2]);
+                    $model = new CustomerCode;
+                    $model->customer_id = $rs->id;
+                    $model->code_id  = $code_id;
+                    $model->status = 1;
+                    $model->save();
+                }
 
+            }
+        }
+        if(trim($dataArr['multi_number']) != ''){
+            $tmp = explode(",", $dataArr['multi_number']);
+            if(!empty($tmp)){
+                foreach ($tmp as $code) {
+                    $rs2 = GiftCode::where('code', $code)->first();
+                   if($rs2){
+                        $code_id = $rs2->id;
+                        $rs1 = CustomerCode::where('code_id', $code_id)->count();
+                        if($rs1 == 0 && $code_id > 0){                        
+                            GiftCode::where('code', $code_id)->update(['status' => 2]);
+                            $model = new CustomerCode;
+                            $model->customer_id = $rs->id;
+                            $model->code_id  = $code_id;
+                            $model->status = 1;
+                            $model->save();
+                        }
+                   }
+                }
             }
         }
         Session::flash('message', 'Tạo mới thành công');
@@ -83,7 +108,8 @@ class CustomerController extends Controller
         $model->update($dataArr);
 
         $selectedList = CustomerCode::where(['customer_id' => $dataArr['id']])->get();
-        if($selectedList->count()> 0){
+
+        if($selectedList->count()> 0){            
             foreach($selectedList as  $tmpa){
                 GiftCode::find($tmpa->code_id)->update(['status'=>1]);
             }
@@ -91,13 +117,37 @@ class CustomerController extends Controller
         CustomerCode::where(['customer_id' => $dataArr['id']])->delete();
         // xu ly tags
         if( !empty( $dataArr['so_may_man'] )){
-            foreach ($dataArr['so_may_man'] as $code_id) {               
-                GiftCode::find($code_id)->update(['status' => 2]);
-                $model = new CustomerCode;
-                $model->customer_id = $dataArr['id'];
-                $model->code_id  = $code_id;
-                $model->status = 1;
-                $model->save();
+            foreach ($dataArr['so_may_man'] as $code_id) {    
+                $rs1 = CustomerCode::where('code_id', $code_id)->count();
+                if($rs1 == 0){           
+                    GiftCode::find($code_id)->update(['status' => 2]);
+                    $model = new CustomerCode;
+                    $model->customer_id = $dataArr['id'];
+                    $model->code_id  = $code_id;
+                    $model->status = 1;
+                    $model->save();
+                }
+            }
+        }
+        if(trim($dataArr['multi_number']) != ''){
+            $tmp = explode(",", $dataArr['multi_number']);
+            if(!empty($tmp)){
+                foreach ($tmp as $code) {
+                   $rs2 = GiftCode::where('code', $code)->first();
+                   if($rs2){
+                        $code_id = $rs2->id;
+                        $rs1 = CustomerCode::where('code_id', $code_id)->count();
+                        if($rs1 == 0 && $code_id > 0){                        
+                            GiftCode::where('code', $code_id)->update(['status' => 2]);
+                            $model = new CustomerCode;
+                            $model->customer_id = $dataArr['id'];
+                            $model->code_id  = $code_id;
+                            $model->status = 1;
+                            $model->save();
+                        }
+                   }
+                    
+                }
             }
         }
         Session::flash('message', 'Cập nhật thành công');        
@@ -192,7 +242,7 @@ class CustomerController extends Controller
                 $codeSelected[] = $value->code_id;
             }
         }
-
+        
         $codeList = GiftCode::where('status', 1)->get();
         return view('backend.customer.edit', compact('detail', 'codeSelected', 'codeList', 'tmpArr'));
     }
