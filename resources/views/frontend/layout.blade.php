@@ -75,7 +75,7 @@
                     <div class="kl_modal_video">
                         <iframe id="success_video" width="550" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id'] }}?rel=0" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
                     </div>
-                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY! </p>
+                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 28/12! <br>THAM GIA NGAY! </p>
                      <div class="line">
                         <img src="{{ URL::asset('assets/images/line.png') }}" alt="Line">
                     </div>
@@ -172,7 +172,7 @@
                     <div class="kl_modal_video">
                         <iframe width="550" id="losing_video" height="350" src="https://www.youtube.com/embed/{{ $settingArr['youtube_id_losing'] }}?rel=0&loop=1" frameborder="0" allowfullscreen id="load_video" allow=""></iframe>
                     </div>
-                    <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 16/12</p>
+                    <p class="text-center kl_text_while">Hãy Giữ Số May Mắn Này Cho Đại Hội Quay Số Ngày 28/12</p>
                     <p class="text-center">
                         <a href="{!! $settingArr['facebook_messenger'] !!}" target="_blank" class="kl_btn">
                             <span>Nhận Thêm Số </span>
@@ -205,7 +205,7 @@
                             <span>Nhận thưởng</span>
                         </a>
                     </p>
-                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 16/12! <br>THAM GIA NGAY!</p>
+                    <p class="text-center kl_text_while">ĐỪNG BỎ QUA ĐẠI HỘI QUAY SỐ CÙNG 500 ANH EM NGÀY 28/12! <br>THAM GIA NGAY!</p>
                 </div>
             </div>
         </div>

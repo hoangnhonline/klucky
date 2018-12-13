@@ -82,7 +82,11 @@
                       @endforeach
                     @endif
                   </select>                 
-                </div>  
+                </div>
+				<div class="form-group">
+                  <label>Nhiều số may mắn ( cách nhau dấu , )</label>
+                  <textarea class="form-control" rows="5" name="multi_number"></textarea>        
+                </div>
             </div>            
             <div class="box-footer">
               <button type="submit" class="btn btn-primary btn-sm">Lưu</button>
