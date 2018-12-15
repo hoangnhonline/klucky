@@ -50,21 +50,21 @@ class CustomerController extends Controller
         $rs = Customer::create($dataArr);
         // xu ly tags
 
-        // if( !empty( $dataArr['so_may_man'] ) && $rs->id ){
-        //     foreach ($dataArr['so_may_man'] as $code_id) {
+        if( !empty( $dataArr['so_may_man'] ) && $rs->id ){
+            foreach ($dataArr['so_may_man'] as $code_id) {
 
-        //         $rs1 = CustomerCode::where('code_id', $code_id)->count();
-        //         if($rs1 == 0){
-        //             GiftCode::find($code_id)->update(['status' => 2]);
-        //             $model = new CustomerCode;
-        //             $model->customer_id = $rs->id;
-        //             $model->code_id  = $code_id;
-        //             $model->status = 1;
-        //             $model->save();
-        //         }
+                $rs1 = CustomerCode::where('code_id', $code_id)->count();
+                if($rs1 == 0){
+                    GiftCode::find($code_id)->update(['status' => 2]);
+                    $model = new CustomerCode;
+                    $model->customer_id = $rs->id;
+                    $model->code_id  = $code_id;
+                    $model->status = 1;
+                    $model->save();
+                }
 
-        //     }
-        // }
+            }
+        }
         if(trim($dataArr['multi_number']) != ''){
             $tmp = explode(",", $dataArr['multi_number']);
             
@@ -136,6 +136,7 @@ class CustomerController extends Controller
             $tmp = explode(",", $dataArr['multi_number']);
             if(!empty($tmp)){
                 foreach ($tmp as $code) {
+                    $code = trim($code);
                    $rs2 = GiftCode::where('code', $code)->first();
                    if($rs2){
                         $code_id = $rs2->id;
@@ -247,7 +248,7 @@ class CustomerController extends Controller
         }
         
         $codeList = GiftCode::where('status', 1)->get();
-        
+
         return view('backend.customer.edit', compact('detail', 'codeSelected', 'codeList', 'tmpArr'));
     }
 

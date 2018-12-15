@@ -90,20 +90,18 @@
                     </div> 
                 </div>                   
                  <div class="form-group">
-                  <?php 
-                  dd($tmpArr);
-                  ?>
+                  
                     <label>Số may mắn</label>
                     <select class="form-control select2" name="so_may_man[]" id="so_may_man" multiple="multiple">                  
                       @if( $codeList->count() > 0)
                         @foreach( $codeList as $value )
-                        <option value="{{ $value->id }}" {{ in_array($value->id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->gift->name }}</option>
+                        <option value="{{ $value->id }}">{{ $value->code }}-{{ $value->gift->name }}</option>
                         @endforeach                        
                       @endif
                       @if( $tmpArr->count() > 0)
                         @foreach( $tmpArr as $value )
                         @if($value->status == 1)
-                        <option value="{{ $value->code_id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}xxx</option>
+                        <option value="{{ $value->code_id }}" {{ in_array($value->code_id,  $codeSelected) ? "selected" : "" }}>{{ $value->code }}-{{ $value->name }}</option>
                         @endif
                         @endforeach                        
                       @endif
