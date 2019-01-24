@@ -53,11 +53,11 @@
                   <input type="text" name="username" id="username" value="{{ old('username', $detail->username) }}" class="form-control">
                 </div> 
                 <div class="form-group">
-                  <label for="email">Số điện thoại/Zalo <span class="red-star">*</span></label>
+                  <label for="email">Số điện thoại/Zalo</label>
                   <input type="text" name="phone" id="phone" value="{{ old('phone', $detail->phone) }}" class="form-control number" maxlength="20">
                 </div> 
                 <div class="form-group">
-                  <label for="email">Email<span class="red-star">*</span></label>
+                  <label for="email">Email</label>
                   <input type="text" name="email" id="email" value="{{ old('email', $detail->email) }}" class="form-control">
                 </div> 
                 <div class="form-group">

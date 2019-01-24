@@ -83,13 +83,18 @@ class GiftCodeController extends Controller
         ]);   
         if($dataArr['code_str']){
             $tmpArr = explode(',', $dataArr['code_str']);
-            foreach($tmpArr as $code){
-                if($code){
-                    GiftCode::create([
-                        'type' => $dataArr['type'],
-                        'gift_id' => $dataArr['gift_id'],
-                        'code' => $code
-                    ]);
+            foreach($tmpArr as $code){				
+				$code = trim($code);
+				
+                if($code != ''){
+					$rs1 = GiftCode::where('code', $code)->count();
+					if($rs1 == 0){
+						GiftCode::create([
+							'type' => $dataArr['type'],
+							'gift_id' => $dataArr['gift_id'],
+							'code' => $code
+						]);
+					}
                 }
             }
         }

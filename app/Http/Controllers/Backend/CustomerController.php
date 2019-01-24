@@ -36,15 +36,7 @@ class CustomerController extends Controller
     {
 
         $dataArr = $request->all();        
-        $this->validate($request,[                                                
-            'phone' => 'required_without:email',
-            'email' => 'required_without:phone',            
-        ],
-        [
-            'email.required_without' => 'Vui lòng nhập email nếu không có số điện thoại.',
-            'phone.required_without' => 'Vui lòng nhập số điện thoại nếu không có email.',
-        ]
-        );        
+               
         $dataArr['date_from'] = $dataArr['date_from'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] =  $dataArr['date_to'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         $rs = Customer::create($dataArr);
@@ -94,15 +86,7 @@ class CustomerController extends Controller
     public function update(Request $request)
     {
         $dataArr = $request->all();
-        $this->validate($request,[                                                
-            'phone' => 'required_without:email',
-            'email' => 'required_without:phone',            
-        ],
-        [
-            'email.required_without' => 'Vui lòng nhập email nếu không có số điện thoại.',
-            'phone.required_without' => 'Vui lòng nhập số điện thoại nếu không có email.',
-        ]
-        );   
+       
         $dataArr['date_from'] = $dataArr['date_from'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_from']));
         $dataArr['date_to'] =  $dataArr['date_to'] == "" ? null : date('Y-m-d H:i:s', strtotime($dataArr['date_to']));   
         
@@ -184,7 +168,7 @@ class CustomerController extends Controller
             $query->where('phone', 'LIKE', '%'.$phone.'%');
         }
        
-        $items = $query->orderBy('id', 'desc')->paginate(20);
+        $items = $query->orderBy('id', 'desc')->paginate(100);
         
         return view('backend.customer.index', compact( 'items', 'email', 'status', 'phone', 'type', 'username'));
     }    

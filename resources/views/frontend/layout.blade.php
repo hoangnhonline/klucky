@@ -39,7 +39,23 @@
 </head>
 
 <body @if($routeName != 'home') class="pageChild" @endif>
-  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+
+page_id="103903069712805"
+theme_color="#1f7f5c">
+
+</div> <!-- attribution=setup_tool -->
+
     <div id="Zoom">
 	
         <div class="@if($routeName == "home") kl_background_home @else kl_background_child @endif">
@@ -281,15 +297,39 @@
     <input type="hidden" value="{{ route('get-content') }}" id="route_get_content">
     <input type="hidden" value="{{ route('check-no') }}" id="route_check_no">
     @yield('js')
-	<!--Start of Zendesk Chat Script-->
-	<script type="text/javascript">
-	window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-	d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-	_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-	$.src="https://v2.zopim.com/?69obQnoMWF2uU3ZkKaarvAN56R4WvgOw";z.t=+new Date;$.
-	type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-	</script>
-	<!--End of Zendesk Chat Script-->
+    <a title="Facebook Chat" class="fb-chat" target="_blank" href="http://bit.ly/quaysodoithuongCHAT">
+    <span class="txt">HỖ TRỢ NHANH</span>
+    <span class="img"><img src="https://cdn.worldvectorlogo.com/logos/facebook-messenger-white.svg" alt="Facebook Chat"></span>
+</a>
+<style>
+.fb-chat {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    transition: box-shadow 150ms linear;
+    text-align: center;
+    color: #fff;
+}
+.fb-chat .txt {
+    display: block;
+    margin-bottom: 10px;
+}
+.fb-chat .img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    text-align: center;
+    margin: 0 auto;
+    background: #0083ff;
+}
+.fb-chat:hover .img {
+    box-shadow: 0 5px 24px rgb(217, 198, 191);
+    transition: box-shadow 150ms linear;
+}
+</style>
 </body>
 
 </html>

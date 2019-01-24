@@ -79,16 +79,16 @@
             <tr>
               <th style="width: 1%">#</th>                            
               @if($type == 1)
-              <th>Họ tên</th>
+              <th width="250">Họ tên</th>
               @else
-              <th>Username</th>
+              <th width="150">Username</th>
               @endif
               @if($type == 1)
               <th>Email</th>
               <th>Số điện thoại</th>
               @else
-              <th>Quy đổi</th>
-              <th>Thời gian</th>
+              <th width="180">Quy đổi</th>
+              <th width="200">Thời gian</th>
               @endif
               <th width="10%">Thời gian gửi</th>
               <th>Số</th>
@@ -148,7 +148,7 @@
                   @foreach($item->giftCode as $code)
                   <?php 
                   echo $code->giftCode->code;
-                  echo "<br>";
+                  echo ", ";
                   ?>
                   @endforeach
                   @endif
